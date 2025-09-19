@@ -1,0 +1,98 @@
+<%# HERO %>
+<div class="relative h-screen w-full">
+  <!-- Background Image -->
+  <div class="absolute inset-0 bg-cover bg-fixed bg-center" style="background-image: url(<%= asset_path('hero.webp') %>);"></div>
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black opacity-70"></div>
+
+  <!-- Content -->
+  <div class="relative flex flex-col justify-center items-center h-full text-center text-white px-4 gap-4">
+    <h1 class="text-2xl pb-4 border-b border-accent">@piertutor</h1>
+    <h2 class="text-4xl/12 md:text-6xl/18 font-bold max-w-3xl">Camionista, Content Creator, Volvo Trucks Ambassador</h2>
+    <a class="btn btn-accent btn-lg md:w-64" href="#about">Scopri chi sono</a>
+  </div>
+</div>
+
+<%# ABOUT %>
+<div id="about" class="relative h-screen w-full">
+  <!-- Background Image -->
+  <div class="absolute inset-0 bg-cover bg-fixed bg-[50%]" style="background-image: url(<%= asset_path('about.jpg') %>);"></div>
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black opacity-70"></div>
+
+  <!-- Content -->
+  <div class="relative flex flex-col justify-center md:flex-row h-full text-white">
+    <!-- Left blank space -->
+    <div class="hidden md:block md:w-1/2"></div>
+
+    <!-- Right content -->
+    <div class="flex flex-col justify-center items-start w-full md:w-1/2 px-4 gap-4 text-center md:text-left md:p-8">
+      <h2 class="text-2xl font-bold max-w-3xl">Ciao, Sono Piertutor!</h2>
+      <p class="text-justify text-lg">
+        Mi chiamo Pierantonio De Piccoli e nel web sono anche conosciuto come Piertutor. Sono un camionista con oltre 20 anni di esperienza, ma la strada è solo l’inizio della mia storia. Dal 2019 racconto le mie giornate dietro al volante, condividendo i momenti più emozionanti: dalle manovre più impegnative ai panorami mozzafiato che incontro lungo il cammino. Oggi, più di 30.000 persone mi seguono sui social – Instagram, Facebook, TikTok e YouTube – e oltre 2 milioni di spettatori al mese si uniscono alle mie avventure.
+      </p>
+      <a class="btn btn-accent btn-lg btn-outline md:w-64" href="#what">Scopri cosa faccio</a>
+    </div>
+  </div>
+</div>
+
+<%# INFO %>
+<div id="what" class="flex flex-col justify-center items-center gap-16 py-16 md:py-24 px-8">
+  <div class="flex flex-col md:flex-row justify-center gap-8 max-w-screen-lg mx-auto">
+    <%= image_tag "aero.jpg", class: "w-full h-64 object-cover rounded-sm md:w-128 md:h-128 md:aspect-square" %>
+    <div class="flex flex-col justify-center gap-2">
+      <h3 class="text-sm">SOCIAL</h3>
+      <h2 class="text-xl font-bold">La Mia Missione Sui Social</h2>
+      <p class="text-lg text-justify">Il mio obiettivo sui social è creare un legame autentico con chi mi segue, offrendo intrattenimento e divertimento, ma sempre con un occhio di riguardo alla sicurezza sulla strada. Realizzo video dinamici, ripresi da più angolazioni e con telecamere diverse, per portarti contenuti originali e distintivi nel mondo dei camion.</p>
+    </div>
+  </div>
+
+  <div class="flex flex-col md:flex-row justify-center gap-8 max-w-screen-lg mx-auto">
+    <%= image_tag "group.jpg", class: "w-full h-64 object-cover rounded-sm md:w-128 md:h-128 md:aspect-square" %>
+    <div class="flex flex-col justify-center gap-2">
+      <h3 class="text-sm">COLLABORAZIONI</h3>
+      <h2 class="text-xl font-bold">Progetti e Collaborazioni</h2>
+      <p class="text-lg text-justify">La mia avventura online è iniziata per gioco, ma ha finito per cambiarmi la vita. Ho avuto l’opportunità di collaborare con brand di livello internazionale e sono diventato ambassador ufficiale di Volvo Trucks Italia, grazie alla quale ho viaggiato in Svezia e in tutta Italia per creare video promozionali e partecipare a eventi. Ho anche lavorato con startup innovative e unito le forze con altri influencer e content creator.</p>
+    </div>
+  </div>
+</div>
+
+<%# CTA %>
+<div class="w-full bg-base py-32 px-8 flex flex-col items-center text-center gap-6 bg-base-300">
+  <h2 class="text-3xl md:text-4xl font-bold">Scopri di più su di me e sulla mia storia.</h2>
+  <a class="btn btn-lg btn-accent md:w-64" href="/about">
+    Scopri la mia storia
+  </a>
+</div>
+
+<%# FOOTER %>
+<footer class="w-full bg-base-200 text-base-content py-16 px-4 sm:px-8">
+  <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row md:justify-between gap-12">
+
+    <!-- Logo -->
+    <div class="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
+      <h1 class="text-4xl font-extrabold tracking-tight">@piertutor</h1>
+      <p class="text-sm text-base-content/70">
+        Camionista • Content Creator • Volvo Trucks Ambassador
+      </p>
+    </div>
+
+    <!-- Social Links -->
+    <div class="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
+      <h3 class="text-lg font-bold mb-2">Seguimi</h3>
+      <div class="flex flex-wrap justify-center md:justify-start gap-4">
+        <a href="#" class="hover:text-accent transition">Instagram</a>
+        <a href="#" class="hover:text-accent transition">Facebook</a>
+        <a href="#" class="hover:text-accent transition">TikTok</a>
+        <a href="#" class="hover:text-accent transition">YouTube</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="mt-12 border-t border-base-300 pt-6 text-center text-sm text-base-content/70">
+    © <%= Time.now.year %> Piertutor. Tutti i diritti riservati.
+  </div>
+</footer>
