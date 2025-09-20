@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_19_204652) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_20_102202) do
+  create_table "affiliate_products", force: :cascade do |t|
+    t.string "title"
+    t.string "image_url"
+    t.string "affiliate_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "submissions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

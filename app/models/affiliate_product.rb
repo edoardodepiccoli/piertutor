@@ -1,0 +1,2 @@
+class AffiliateProduct < ApplicationRecord
+end
