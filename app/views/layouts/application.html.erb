@@ -2,7 +2,7 @@
 <html data-theme="light">
   <head>
     <title><%= content_for(:title) || "Piertutor" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -23,6 +23,22 @@
   </head>
 
   <body>
+    <div>
+      <% if flash[:success] %>
+        <div class="toast toast-bottom toast-center min-w-64 md:min-w-128 z-10">
+          <div class="alert alert-success flex justify-center items-center">
+            <span><%= flash[:success] %></span>
+          </div>
+        </div>
+      <% end %>
+      <% if flash[:error] %>
+        <div class="toast toast-bottom toast-center min-w-64 md:min-w-128 z-10">
+          <div class="alert alert-error flex justify-center items-center">
+            <p><%= flash[:error] %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
     <main>
       <%= yield %>
     </main>
