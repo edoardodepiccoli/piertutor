@@ -3,7 +3,7 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new
   end
 
-def create
+  def create
     @submission = Submission.new(submission_params)
 
     if @submission.save

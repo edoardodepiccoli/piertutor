@@ -1,7 +1,7 @@
 <%# BANNER %>
 <div class="relative h-64 md:h-128 w-full">
   <!-- Background Image -->
-  <div class="absolute inset-0 bg-cover bg-bottom md:bg-center" style="background-image: url(<%= asset_path('driving.jpg') %>);"></div>
+  <div class="absolute inset-0 bg-cover bg-bottom md:bg-fixed bg-bottom" style="background-image: url(<%= asset_path('driving.jpg') %>);"></div>
 
   <!-- Dark Overlay -->
   <div class="absolute inset-0 bg-black opacity-60"></div>
@@ -10,4 +10,22 @@
   <div class="relative flex flex-col justify-end items-center h-full text-center text-white p-8 gap-4">
     <h1 class="text-4xl md:text-6xl font-bold max-w-3xl">Prodotti Affiliati</h1>
   </div>
+</div>
+
+<div class="md:my-24 my-8 flex flex-col md:flex-row md:items-stretch md:flex-wrap justify-center items-center gap-8 px-8 py-8">
+  <% @affiliate_products.each do |affiliate_product| %>
+    <div class="card bg-base shadow-lg md:max-w-64 md:flex md:flex-col">
+      <figure class="md:flex-shrink-0">
+        <img
+          src="<%= affiliate_product.image_url %>"
+          alt="<%= affiliate_product.title %>" />
+      </figure>
+      <div class="card-body md:flex md:flex-col md:flex-grow">
+        <h2 class="card-title md:flex-shrink-0"><%= affiliate_product.title %></h2>
+        <div class="card-actions justify-start md:mt-auto">
+          <a href="<%= affiliate_product.affiliate_url %>" class="btn btn-primary">Guarda su Amazon</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
