@@ -26,5 +26,34 @@
     <main>
       <%= yield %>
     </main>
+    <%# FOOTER %>
+    <footer class="w-full bg-base-200 text-base-content py-16 px-4 sm:px-8">
+      <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row md:justify-between gap-12">
+
+        <!-- Logo -->
+        <div class="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
+          <h1 class="text-4xl font-extrabold tracking-tight">@piertutor</h1>
+          <p class="text-sm text-base-content/70">
+            Camionista • Content Creator • Volvo Trucks Ambassador
+          </p>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
+          <h3 class="text-lg font-bold mb-2">Seguimi</h3>
+          <div class="flex flex-wrap justify-center md:justify-start gap-4">
+            <a href="#" class="hover:text-accent transition">Instagram</a>
+            <a href="#" class="hover:text-accent transition">Facebook</a>
+            <a href="#" class="hover:text-accent transition">TikTok</a>
+            <a href="#" class="hover:text-accent transition">YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-12 border-t border-base-300 pt-6 text-center text-sm text-base-content/70">
+        © <%= Time.now.year %> Piertutor. Tutti i diritti riservati.
+      </div>
+    </footer>
   </body>
 </html>
