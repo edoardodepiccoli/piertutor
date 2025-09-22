@@ -1,4 +1,6 @@
 class AffiliateProductsController < ApplicationController
+  before_action :authenticate_user!, only: [ :new, :create ]
+
   def index
     @affiliate_products = AffiliateProduct.all
   end
@@ -19,6 +21,12 @@ class AffiliateProductsController < ApplicationController
       flash.now[:error] = "Ops.. C'è stato un errore. Riprova!"
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @affiliate_product = AffiliateProduct.find(params[:id])
+    @affiliate_product.destroy
+    redirect_to affiliate_products_path, notice: "Prodotto eliminato"
   end
 
   private
