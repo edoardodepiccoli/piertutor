@@ -2,7 +2,7 @@
 <html data-theme="light">
   <head>
     <title><%= content_for(:title) || "Piertutor" %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -24,7 +24,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="bg-black">
     <div>
       <% if flash[:success] %>
         <div class="toast toast-bottom toast-center min-w-64 md:min-w-128 z-10">
@@ -48,7 +48,7 @@
         </div>
       <% end %>
     </div>
-    <main>
+    <main class="bg-white">
       <nav class="top-0 left-0 right-0 z-50 bg-black border-b border-accent" data-controller="menu" aria-label="Main navigation">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div class="flex justify-between items-center">
