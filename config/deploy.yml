@@ -27,8 +27,8 @@ env:
     SOLID_QUEUE_IN_PUMA: true
 
 volumes:
-  - "storage:/rails/storage"
-  - "database:/rails/storage/*.sqlite3"
+  - "piertutor-storage:/rails/storage"
+  - "piertutor-database:/rails/storage/*.sqlite3"
 
 aliases:
   console: app exec --interactive --reuse "bin/rails console"
