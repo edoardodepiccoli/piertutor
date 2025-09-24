@@ -14,7 +14,7 @@ Rails.application.configure do
     domain: "mg.piertutor.com", # Your actual domain
     user_name: ENV["MAILGUN_SMTP_USERNAME"],
     password: ENV["MAILGUN_SMTP_PASSWORD"],
-    authentication: :plain
+    authentication: :login
   }
 
   # Code is not reloaded between requests.
