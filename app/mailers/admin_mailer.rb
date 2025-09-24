@@ -1,6 +1,6 @@
 # app/mailers/admin_mailer.rb
 class AdminMailer < ApplicationMailer
-  default from: "noreply@piertutor.com" # Change to your domain
+  default from: "no-reply@mg.piertutor.com" # Change to your domain
 
   def form_submission_email(submission)
     @submission = submission

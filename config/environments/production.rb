@@ -3,6 +3,20 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+
+  config.action_mailer.smtp_settings = {
+    address: "smtp.mailgun.org",
+    port: 587,
+    domain: "mg.piertutor.com", # Your actual domain
+    user_name: ENV["MAILGUN_SMTP_USERNAME"],
+    password: ENV["MAILGUN_SMTP_PASSWORD"],
+    authentication: :plain
+  }
+
   # Code is not reloaded between requests.
   config.enable_reloading = false
 

@@ -409,6 +409,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
+  dotenv
   importmap-rails
   inline_svg (~> 1.10)
   jbuilder
