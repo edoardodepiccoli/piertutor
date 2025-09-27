@@ -7,31 +7,33 @@
   <img src="<%= asset_path("hero.webp") %>" alt="piertutor in posa davanti al suo camion" class="absolute inset-0 w-full h-full object-cover object-[50%_100%] scale-110 lg:scale-130 lg:origin-left"/>
   
   <!-- Dark overlay -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-black md:bg-gradient-to-l md:from-black/50 md:to-black/90"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-black/90 md:bg-gradient-to-l md:from-black/50 md:to-black/90"></div>
 
-  <div class="max-w-[1200px] mx-auto px-8 relative z-10 text-white pb-8 h-full flex flex-col justify-end lg:justify-center lg:px-0">
-    <h1 class="archivo text-lg lg:text-4xl lg:mb-4">@piertutor</h1>
+  <div class="max-w-[1200px] mx-auto px-8 relative z-10 text-white pb-16 h-full flex flex-col justify-end lg:justify-center lg:px-0">
+    <h1 class="archivo text-xl mb-2 lg:text-4xl lg:mb-4">@piertutor</h1>
     <h2 class="text-2xl mb-4 lg:text-6xl lg:mb-8 lg:max-w-screen-md">Camionista, Content Creator, Volvo Trucks Ambassador</h2>
     <div class="flex gap-3">
-      <button class="px-4 py-2 bg-brand text-black border-1 border-black shadow-[-4px_4px_0_0_#FFF] transition-all transition-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none hover:cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">Scopri di più</button>
-      <button class="px-4 py-2 bg-white text-black border-1 border-black shadow-[-4px_4px_0_0_#FFF] transition-all transition-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none hover:cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">Contattami</button>
+      <button class="px-4 py-2 bg-brand text-black border-1 border-black shadow-[-4px_4px_0_0_#FFF] transition-all transition-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none hover:cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none"><a href="#about">Conoscimi meglio</a></button>
+      <button class="px-4 py-2 bg-white text-black border-1 border-black shadow-[-4px_4px_0_0_#FFF] transition-all transition-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none hover:cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none"><a href="#contact">Contattami</a></button>
     </div>
   </div>
 </section>
 
 <%# HELLO SECTION %>
-<section class="relative min-h-[80vh] bg-[position:51%_25%] bg-cover lg:min-h-[95vh] lg:flex lg:flex-col lg:justify-center" style="background-image: url('<%= asset_path("about.webp") %>')">
+<section id="about" class="relative min-h-[80vh] lg:min-h-[95vh] lg:flex lg:flex-col lg:justify-center">
+  <img src="<%= asset_path("about.webp") %>" alt="piertutor in svezia per uno shooting con i nuovi volvo aero" class="absolute inset-0 w-full h-full object-cover object-[51%_25%]"/>
+  
   <div class="absolute inset-0 bg-black/70"></div>
 
   <div class="max-w-[1200px] mx-auto w-full py-24 px-8 relative z-10 text-white flex flex-col lg:flex-row lg:justify-between lg:px-0 lg:gap-24 lg:items-center">
     <div class="lg:max-w-screen-md">
       <h2 class="text-2xl mb-4 lg:text-6xl lg:mb-8 lg:max-w-screen-md">Ciao, Sono Piertutor</h1>
-      <p class="text-lg">Mi chiamo Pierantonio De Piccoli e nel web sono anche conosciuto come Piertutor. Sono un camionista con oltre 20 anni di esperienza, ma la strada è solo l’inizio della mia storia. Dal 2019 racconto le mie giornate dietro al volante, condividendo i momenti più emozionanti: dalle manovre più impegnative ai panorami mozzafiato. Oggi, decine di migliaia di persone mi seguono su Instagram, Facebook, TikTok e YouTube e milioni di spettatori al mese si uniscono alle mie avventure.</p>
+      <p class="text-lg">Mi chiamo Pierantonio De Piccoli e nel web sono anche conosciuto come Piertutor. Sono un camionista con oltre 20 anni di esperienza, ma la strada è solo l'inizio della mia storia. Dal 2019 racconto le mie giornate dietro al volante, condividendo i momenti più emozionanti: dalle manovre più impegnative ai panorami mozzafiato. Oggi, decine di migliaia di persone mi seguono su Instagram, Facebook, TikTok e YouTube e milioni di spettatori al mese si uniscono alle mie avventure.</p>
     </div>
     <div class="flex flex-wrap justify-start items-center gap-4 mt-12 lg:flex-col lg:gap-12">
       <div class="flex flex-col justify-center items-center">
         <span class="text-5xl archivo-black lg:text-7xl">50M+</span>
-        <span class="lg:text-xl">views mensili</span>
+        <span class="lg:text-xl">view mensili</span>
       </div>
       <div class="flex flex-col justify-center items-center">
         <span class="text-5xl archivo-black lg:text-7xl">50k+</span>
@@ -44,3 +46,108 @@
     </div>
   </div>
 </section>
+
+<%# SECTIONS %>
+<section class="border-t-2 border-brand sticky top-0 min-h-[80vh] flex flex-col justify-end overflow-hidden">
+  <img src="<%= asset_path("selfie.webp") %>" alt="selfie di piertutor" class="absolute inset-0 w-full h-full object-cover object-[50%_50%]"/>
+  
+  <div class="bg-gradient-to-b from-black/50 to-black/90 absolute inset-0"></div>
+
+  <div class="max-w-[1200px] mx-auto w-full py-12 px-8 relative z-10 text-white lg:px-0 lg:py-32">
+    <h2 class="text-4xl mb-4 lg:text-6xl lg:mb-8">Storia</h1>
+    <p class="text-lg lg:max-w-screen-md">Dal 2019, documento la mia vita da camionista e le meraviglie che incontro lungo il cammino. Oggi collaboro con molti brand, affrontando temi fondamentali come la sicurezza alla guida, l'efficienza e la sostenibilità. È incredibile pensare che oggi oltre 2 milioni di persone guardano i miei video, e che ogni giorno i miei fan mi salutano quando mi vedono passare con il mio camion.</p>
+  </div>
+</section>
+
+<section class="border-t-2 border-brand sticky top-6 min-h-[80vh] flex flex-col justify-end overflow-hidden lg:top-12">
+  <img src="<%= asset_path("focus.webp") %>" alt="selfie di piertutor" class="absolute inset-0 w-full h-full object-cover object-[10%_50%]"/>
+  
+  <div class="bg-gradient-to-b from-black/50 to-black/90 absolute inset-0"></div>
+
+  <div class="max-w-[1200px] mx-auto w-full py-12 px-8 relative z-10 text-white lg:px-0 lg:py-32">
+    <h2 class="text-4xl mb-4 lg:text-6xl lg:mb-8">Missione</h1>
+    <p class="text-lg lg:max-w-screen-md">Il mio obiettivo sui social è creare un legame autentico con chi mi segue, offrendo intrattenimento e divertimento, ma sempre con un occhio di riguardo alla sicurezza sulla strada. Realizzo video dinamici, ripresi da più angolazioni e con telecamere diverse, per portarti contenuti originali e distintivi nel mondo dei camion.</p>
+  </div>
+</section>
+
+<section class="border-t-2 border-brand sticky top-12 min-h-[80vh] flex flex-col justify-start items-center overflow-hidden lg:top-24">
+  <img src="<%= asset_path("group.webp") %>" alt="selfie di piertutor" class="absolute inset-0 w-full h-full object-cover object-[50%_50%]"/>
+  
+  <div class="bg-gradient-to-t from-black/50 to-black/90 absolute inset-0"></div>
+
+  <div class="max-w-[1200px] mx-auto w-full py-12 px-8 relative z-10 text-white lg:px-0 lg:py-32">
+    <h2 class="text-4xl mb-4 text-left lg:text-center lg:text-6xl lg:mb-8">Collaborazioni</h1>
+    <p class="text-lg lg:text-center mx-auto text-left lg:max-w-screen-md">La mia avventura online è iniziata per gioco, ma ha finito per cambiarmi la vita. Ho avuto l'opportunità di collaborare con brand di livello internazionale e sono diventato ambassador ufficiale di Volvo Trucks Italia, viaggiando in Svezia e in tutta Italia per creare video promozionali e partecipare a eventi. Ho anche lavorato con startup innovative e unito le forze con altri influencer e content creator.</p>
+  </div>
+</section>
+
+<%# CONTACT SECTION %>
+<section id="contact" class="relative min-h-[100vh] flex items-center overflow-hidden lg:min-h-[85vh]">
+  <!-- Background Image -->
+  <img src="<%= asset_path("contact.webp") %>" alt="piertutor al telefono" class="absolute inset-0 w-full h-full object-cover object-[70%_30%] lg:object-[60%_30%]"/>
+  
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div class="max-w-[1200px] mx-auto w-full px-8 relative z-10 text-white lg:px-0">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+      <!-- Left content - Text -->
+      <div class="mb-8 lg:mb-0 lg:max-w-lg lg:flex-shrink-0">
+        <h2 class="text-4xl mb-4 lg:text-6xl lg:mb-6">Collaboriamo?</h2>
+        <p class="text-lg lg:text-xl lg:mb-0">Compila il form e scrivimi una proposta di collaborazione, ti risponderò il prima possibile!</p>
+      </div>
+
+      <!-- Right content - Form -->
+      <div class="w-full lg:max-w-lg lg:flex-shrink-0">
+        <%= form_with model: @submission, local: true, class: "space-y-4" do |form| %>
+          <!-- Nome Field -->
+          <div class="form-control">
+            <%= form.text_field :full_name,
+                                class: "w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:border-white/50 focus:bg-white/15 focus:outline-none transition-all duration-200",
+                                placeholder: "Nome", 
+                                required: true %>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-control">
+            <%= form.email_field :email,
+                                 class: "w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:border-white/50 focus:bg-white/15 focus:outline-none transition-all duration-200",
+                                 placeholder: "Email", 
+                                 required: true %>
+          </div>
+
+          <!-- Message Field -->
+          <div class="form-control">
+            <%= form.text_area :message,
+                               class: "w-full px-4 py-3 h-32 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:border-white/50 focus:bg-white/15 focus:outline-none transition-all duration-200 resize-none",
+                               placeholder: "Messaggio", 
+                               required: true %>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <%= form.submit "Contattami!",
+                            class: "w-full px-6 py-3 bg-brand text-black font-semibold border border-black shadow-[-4px_4px_0_0_#FFF] transition-all duration-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# FOOTER %>
+<footer class="relative bg-white text-black">
+  <div class="max-w-[1200px] mx-auto px-8 py-16 lg:px-0">
+    <!-- Logo Section -->
+    <div class="text-center mb-12">
+      <h3 class="text-4xl archivo-black mb-4 lg:text-8xl">@piertutor</h3>
+      <p class="text-gray-600 max-w-2xl mx-auto lg:text-lg">Camionista, Content Creator, Volvo Trucks Ambassador</p>
+    </div>
+    <!-- Bottom Bar -->
+    <div class="border-t border-white/10 pt-8">
+      <div class="flex flex-col md:flex-row justify-center items-center text-sm text-gray-600">
+        <p>© 2025 Piertutor. Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </div>
+</footer>
