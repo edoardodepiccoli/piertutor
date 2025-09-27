@@ -12,3 +12,31 @@
 * {
   scroll-behavior: smooth;
 }
+
+* {
+  font-family: "Archivo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+h1, h2, h3 {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.archivo {
+  font-family: "Archivo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.archivo-black{
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

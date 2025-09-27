@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get "/contatti", to: "submissions#new"
   get "/affiliati", to: "affiliate_products#index"
 
   resources :submissions, only: [ :new, :create ]
