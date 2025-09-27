@@ -4,12 +4,12 @@
 <%# HERO SECTION %>
 <section class="relative h-[80vh] overflow-hidden lg:h-[95vh]">
   <!-- Image element positioned behind -->
-  <img src="<%= asset_path("hero.webp") %>" alt="piertutor in posa davanti al suo camion" class="absolute inset-0 w-full h-full object-cover object-[50%_25%] lg:scale-130 lg:origin-left"/>
+  <img src="<%= asset_path("hero.webp") %>" alt="piertutor in posa davanti al suo camion" class="absolute inset-0 w-full h-full object-cover object-[50%_100%] scale-110 lg:scale-130 lg:origin-left"/>
   
   <!-- Dark overlay -->
   <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-black md:bg-gradient-to-l md:from-black/50 md:to-black/90"></div>
 
-  <div class="max-w-[1200px] mx-auto relative z-10 text-white pb-8 h-full flex flex-col justify-end lg:justify-center">
+  <div class="max-w-[1200px] mx-auto px-8 relative z-10 text-white pb-8 h-full flex flex-col justify-end lg:justify-center lg:px-0">
     <h1 class="archivo text-lg lg:text-4xl lg:mb-4">@piertutor</h1>
     <h2 class="text-2xl mb-4 lg:text-6xl lg:mb-8 lg:max-w-screen-md">Camionista, Content Creator, Volvo Trucks Ambassador</h2>
     <div class="flex gap-3">
@@ -20,6 +20,27 @@
 </section>
 
 <%# HELLO SECTION %>
-<section class="relative h-[80vh] lg:h-screen bg-[position:51%_25%] bg-cover" style="background-image: url('<%= asset_path("about.webp") %>')">
-  <div class="absolute inset-0" style="background-color: rgba(0, 0, 0, 0.5);"></div>
+<section class="relative min-h-[80vh] bg-[position:51%_25%] bg-cover lg:min-h-[95vh] lg:flex lg:flex-col lg:justify-center" style="background-image: url('<%= asset_path("about.webp") %>')">
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="max-w-[1200px] mx-auto w-full py-24 px-8 relative z-10 text-white flex flex-col lg:flex-row lg:justify-between lg:px-0 lg:gap-24 lg:items-center">
+    <div class="lg:max-w-screen-md">
+      <h2 class="text-2xl mb-4 lg:text-6xl lg:mb-8 lg:max-w-screen-md">Ciao, Sono Piertutor</h1>
+      <p class="text-lg">Mi chiamo Pierantonio De Piccoli e nel web sono anche conosciuto come Piertutor. Sono un camionista con oltre 20 anni di esperienza, ma la strada è solo l’inizio della mia storia. Dal 2019 racconto le mie giornate dietro al volante, condividendo i momenti più emozionanti: dalle manovre più impegnative ai panorami mozzafiato. Oggi, decine di migliaia di persone mi seguono su Instagram, Facebook, TikTok e YouTube e milioni di spettatori al mese si uniscono alle mie avventure.</p>
+    </div>
+    <div class="flex flex-wrap justify-start items-center gap-4 mt-12 lg:flex-col lg:gap-12">
+      <div class="flex flex-col justify-center items-center">
+        <span class="text-5xl archivo-black lg:text-7xl">50M+</span>
+        <span class="lg:text-xl">views mensili</span>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <span class="text-5xl archivo-black lg:text-7xl">50k+</span>
+        <span class="lg:text-xl">followers</span>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <span class="text-5xl archivo-black lg:text-7xl">20+</span>
+        <span class="lg:text-xl">anni al volante</span>
+      </div>
+    </div>
+  </div>
 </section>
