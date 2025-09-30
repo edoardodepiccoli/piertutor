@@ -4,7 +4,7 @@
 <%# BANNER %>
 <div class="relative h-64 md:h-128 w-full">
   <!-- Background Image -->
-  <div class="absolute inset-0 bg-cover bg-bottom md:bg-fixed bg-bottom" style="background-image: url(<%= asset_path('driving.webp') %>);"></div>
+  <div class="absolute inset-0 bg-cover md:bg-fixed bg-bottom" style="background-image: url(<%= asset_path('driving.webp') %>);"></div>
 
   <!-- Dark Overlay -->
   <div class="absolute inset-0 bg-black opacity-60"></div>
@@ -20,23 +20,42 @@
   </div>
 </div>
 
-<div class="md:py-24 md:py-8 flex flex-col md:flex-row md:items-stretch md:flex-wrap justify-center items-center gap-8 px-8 py-8">
-  <% @affiliate_products.each do |affiliate_product| %>
-    <div class="card bg-base shadow-lg md:max-w-64 md:flex md:flex-col">
-      <figure class="md:flex-shrink-0">
-        <img
-          src="<%= affiliate_product.image_url %>"
-          alt="<%= affiliate_product.title %>" />
-      </figure>
-      <div class="card-body md:flex md:flex-col md:flex-grow">
-        <h2 class="card-title md:flex-shrink-0 md:mt-auto"><%= affiliate_product.title %></h2>
-        <div class="card-actions justify-start">
-          <a href="<%= affiliate_product.affiliate_url %>" class="btn btn-primary w-full">Guarda su Amazon</a>
-          <% if current_user %>
-            <%= link_to 'Elimina', affiliate_product_path(affiliate_product), data: { turbo_method: :delete, turbo_confirm: 'Sicuro?' }, class: "btn btn-error w-full" %>
-          <% end %>
+<%# PRODUCT LIST %>
+<section class="bg-gray-100 py-16 px-8">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <% @affiliate_products.each do |affiliate_product| %>
+        <div class="bg-white flex flex-col border border-gray-200 overflow-hidden">
+          <!-- Image -->
+          <div class="w-full flex items-center justify-center p-4">
+            <img src="<%= affiliate_product.image_url %>" 
+                 alt="<%= affiliate_product.title %>"
+                 class="w-full h-64 object-contain"/>
+          </div>
+
+          <!-- Content -->
+          <div class="flex flex-col flex-grow p-6">
+            <h2 class="text-lg font-semibold mb-4 text-gray-900"><%= affiliate_product.title %></h2>
+            
+            <div class="mt-auto flex flex-col gap-3">
+              <a href="<%= affiliate_product.affiliate_url %>" target="_blank" rel="nofollow" 
+                 class="translate-x-[2px] w-full px-4 py-2 bg-brand text-black font-semibold text-center border border-black shadow-[-4px_4px_0_0_#000] transition-all duration-150 
+                        hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer 
+                        active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">
+                Guarda su Amazon
+              </a>
+
+              <% if current_user %>
+                <%= link_to 'Elimina', affiliate_product_path(affiliate_product),
+                  data: { turbo_method: :delete, turbo_confirm: 'Sicuro?' },
+                  class: "translate-x-[2px] w-full px-4 py-2 bg-red-600 text-white font-semibold text-center border border-black shadow-[-4px_4px_0_0_#000] transition-all duration-150 
+                          hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer 
+                          active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none" %>
+              <% end %>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
+</section>
