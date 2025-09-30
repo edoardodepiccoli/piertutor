@@ -1,70 +1,64 @@
 <%# LOGIN FORM %>
-<div class="relative h-[80vh] px-4 md:px-8">
+<section class="relative min-h-[100vh] flex items-center overflow-hidden lg:min-h-[85vh]">
   <!-- Background Image -->
-  <div class="absolute inset-0 bg-cover bg-[40%]" style="background-image: url(<%= asset_path('driving.webp') %>);"></div>
+  <img src="<%= asset_path("driving.webp") %>" alt="Camionista alla guida" class="absolute inset-0 w-full h-full object-cover object-[40%]"/>
+  
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black/60"></div>
 
-  <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-black opacity-60"></div>
-
-  <!-- Content -->
-  <div class="relative flex flex-col justify-center md:flex-row h-full text-white">
-    <!-- Left blank space -->
-    <div class="hidden md:block md:w-1/2"></div>
-
-    <!-- Right content -->
-    <div class="flex flex-col justify-center items-left w-full md:w-1/2 px-4 md:px-8 lg:px-12">
-      <h1 class="text-4xl font-bold mb-8">Accedi</h1>
+  <div class="max-w-[1200px] mx-auto w-full px-8 relative z-10 text-white lg:px-0">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-16">
       
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "w-full max-w-lg" }) do |f| %>
-        <div class="space-y-2 w-full">
+      <!-- Left content (can be left empty or add intro text) -->
+      <div class="mb-8 lg:mb-0 lg:max-w-lg lg:flex-shrink-0">
+        <h2 class="text-4xl mb-4 lg:text-6xl lg:mb-6">Accedi</h2>
+        <p class="text-lg lg:text-xl">Accedi al tuo account per continuare.</p>
+      </div>
+
+      <!-- Right content - Login Form -->
+      <div class="w-full lg:max-w-lg lg:flex-shrink-0">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-4" }) do |f| %>
+          
           <!-- Email Field -->
           <div class="form-control">
-            <%= f.label :email, class: "label justify-start pb-2" do %>
-              <span class="label-text text-base font-semibold text-lg">Email</span>
-            <% end %>
-            <%= f.email_field :email, 
-                               autofocus: true, 
+            <%= f.email_field :email,
+                               autofocus: true,
                                autocomplete: "email",
-                               class: "input input-bordered w-full bg-white/5 backdrop-blur-md border-white/20 text-white placeholder-white/50 focus:border-white focus:bg-white/10 focus:outline-none transition-all duration-200",
-                               placeholder: "email@email.com", 
-                               required: true %>
+                               placeholder: "Email",
+                               required: true,
+                               class: "w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:border-white/50 focus:bg-white/15 focus:outline-none transition-all duration-200" %>
           </div>
 
           <!-- Password Field -->
           <div class="form-control">
-            <%= f.label :password, class: "label justify-start pb-2" do %>
-              <span class="label-text text-base font-semibold text-lg">Password</span>
-            <% end %>
-            <%= f.password_field :password, 
+            <%= f.password_field :password,
                                  autocomplete: "current-password",
-                                 class: "input input-bordered w-full bg-white/5 backdrop-blur-md border-white/20 text-white placeholder-white/50 focus:border-white focus:bg-white/10 focus:outline-none transition-all duration-200",
-                                 placeholder: "password", 
-                                 required: true %>
+                                 placeholder: "Password",
+                                 required: true,
+                                 class: "w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:border-white/50 focus:bg-white/15 focus:outline-none transition-all duration-200" %>
           </div>
 
           <!-- Remember Me Checkbox -->
           <% if devise_mapping.rememberable? %>
-            <div class="form-control">
-              <label class="label cursor-pointer justify-start gap-3 pt-4">
-                <%= f.check_box :remember_me, 
-                                 class: "checkbox checkbox-primary bg-white/5 border-white/20 focus:border-white" %>
-                <span class="label-text text-base font-semibold text-white">Resta connesso</span>
-              </label>
+            <div class="hidden checked form-control items-center gap-3 pt-2">
+              <%= f.check_box :remember_me, 
+                               class: "checkbox checkbox-primary bg-white/10 border-white/20 focus:border-white" %>
+              <span class="text-base font-medium text-white">Resta connesso</span>
             </div>
           <% end %>
 
           <!-- Submit Button -->
-          <div class="pt-2">
-            <%= f.submit "Log in",
-                         class: "btn w-full" %>
+          <div>
+            <%= f.submit "Accedi",
+                         class: "translate-x-[2px] w-full px-6 py-3 bg-brand text-black font-semibold border border-black shadow-[-4px_4px_0_0_#FFF] transition-all duration-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none" %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
 
-      <!-- Devise Shared Links -->
-      <div class="mt-6 text-center">
-        <%= render "devise/shared/links" %>
+        <!-- Devise Shared Links -->
+        <div class="mt-6 text-center">
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
