@@ -35,15 +35,33 @@
   </head>
 
   <body class="bg-black">
-    <div>
-      <% if flash[:success] %>
-      <% end %>
-      <% if flash[:notice] %>
-      <% end %>
-      <% if flash[:error] %>
+    <div class="fixed bottom-6 inset-x-0 flex flex-col items-center space-y-2 z-50">
+      <% flash.each do |type, message| %>
+        <% next if message.blank? %>
+
+        <% css_class =
+          case type.to_sym
+          when :success then "bg-green-600 text-white"
+          when :notice  then "bg-blue-600 text-white"
+          when :error   then "bg-red-600 text-white"
+          else "bg-gray-700 text-white"
+          end
+        %>
+
+        <div
+          data-controller="flash"
+          data-flash-duration-value="2000"
+          class="px-6 py-3 rounded-lg shadow-lg transform transition-all duration-500 ease-in-out
+                translate-y-full opacity-0 <%= css_class %>"
+        >
+          <%= message %>
+        </div>
       <% end %>
     </div>
     <main>
+      <nav>
+        
+      </nav>
       <%= yield %>
     </main>
   </body>
