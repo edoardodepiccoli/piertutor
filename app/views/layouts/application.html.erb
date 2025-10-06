@@ -35,6 +35,29 @@
   </head>
 
   <body class="bg-black">
+    <!-- Navbar -->
+    <nav 
+      data-controller="navbar" 
+      class="fixed top-0 left-0 right-0 z-50 transform -translate-y-full transition-transform duration-300 ease-in-out"
+      data-navbar-target="nav"
+    >
+      <div class="bg-black border-b-2 border-brand shadow-lg">
+        <div class="max-w-[1200px] mx-auto px-8 py-4 flex justify-between items-center lg:px-0">
+          <!-- Logo -->
+          <a href="/" class="text-white archivo text-xl lg:text-2xl hover:text-brand transition-colors">
+            @piertutor
+          </a>
+
+          <!-- Button -->
+          <a href="/affiliati">
+            <button class="translate-x-[2px] px-4 py-2 bg-brand text-black border border-black shadow-[-3px_3px_0_0_#FFF] transition-all duration-150 hover:translate-x-[-3px] hover:translate-y-[3px] hover:shadow-none cursor-pointer active:translate-x-[-3px] active:translate-y-[3px] active:shadow-none text-sm lg:text-base font-semibold">
+              Prodotti Affiliati
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+
     <div class="fixed bottom-6 inset-x-0 flex flex-col items-center space-y-2 z-50">
       <% flash.each do |type, message| %>
         <% next if message.blank? %>
@@ -59,42 +82,39 @@
       <% end %>
     </div>
     <main>
-      <nav>
-        
-      </nav>
       <%= yield %>
     </main>
     <%# FOOTER %>
-<footer class="relative bg-white text-black border-t border-gray-200">
-  <div class="max-w-[1200px] mx-auto px-6 py-12 lg:px-0 lg:py-20 grid gap-12 lg:grid-cols-3 lg:gap-16">
-    
-    <!-- Logo & Claim -->
-    <div class="text-center lg:text-left">
-      <h3 class="text-4xl lg:text-6xl archivo-black mb-4">@piertutor</h3>
-      <p class="text-gray-600 max-w-sm mx-auto lg:mx-0 lg:text-base">
-        Camionista, Content Creator, Volvo Trucks Ambassador
-      </p>
-    </div>
+    <footer class="relative bg-white text-black border-t border-gray-200">
+      <div class="max-w-[1200px] mx-auto px-6 py-12 lg:px-0 lg:py-20 grid gap-12 lg:grid-cols-3 lg:gap-16">
+        
+        <!-- Logo & Claim -->
+        <div class="text-center lg:text-left">
+          <h3 class="text-4xl lg:text-6xl archivo-black mb-4">@piertutor</h3>
+          <p class="text-gray-600 max-w-sm mx-auto lg:mx-0 lg:text-base">
+            Camionista, Content Creator, Volvo Trucks Ambassador
+          </p>
+        </div>
 
-    <!-- Social Links -->
-    <div class="text-center">
-      <h3 class="text-lg font-bold mb-4 uppercase tracking-wide">Seguimi</h3>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://www.instagram.com/piertutor" class="hover:text-primary font-medium transition-colors">Instagram</a>
-        <a href="https://www.facebook.com/gianni.bugno.1" class="hover:text-primary font-medium transition-colors">Facebook</a>
-        <a href="https://www.tiktok.com/@piertutor" class="hover:text-primary font-medium transition-colors">TikTok</a>
-        <a href="https://www.youtube.com/c/PierantonioDePiccoli" class="hover:text-primary font-medium transition-colors">YouTube</a>
+        <!-- Social Links -->
+        <div class="text-center">
+          <h3 class="text-lg font-bold mb-4 uppercase tracking-wide">Seguimi</h3>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://www.instagram.com/piertutor" class="hover:text-primary font-medium transition-colors">Instagram</a>
+            <a href="https://www.facebook.com/gianni.bugno.1" class="hover:text-primary font-medium transition-colors">Facebook</a>
+            <a href="https://www.tiktok.com/@piertutor" class="hover:text-primary font-medium transition-colors">TikTok</a>
+            <a href="https://www.youtube.com/c/PierantonioDePiccoli" class="hover:text-primary font-medium transition-colors">YouTube</a>
+          </div>
+        </div>
+
+        <!-- Bottom Right -->
+        <div class="flex flex-col items-center justify-start text-center lg:items-end lg:text-right gap-4">
+          <p class="text-sm text-gray-500">© 2025 Piertutor. Tutti i diritti riservati.</p>
+          <% if current_user %>
+            <%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete } %>
+          <% end %>
+        </div>
       </div>
-    </div>
-
-    <!-- Bottom Right -->
-    <div class="flex flex-col items-center justify-start text-center lg:items-end lg:text-right gap-4">
-      <p class="text-sm text-gray-500">© 2025 Piertutor. Tutti i diritti riservati.</p>
-      <% if current_user %>
-        <%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete } %>
-      <% end %>
-    </div>
-  </div>
-</footer>
+    </footer>
   </body>
 </html>
