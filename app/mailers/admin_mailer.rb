@@ -9,7 +9,7 @@ class AdminMailer < ApplicationMailer
     @message = submission[:message] || submission["message"]
 
     mail(
-      to: "edoardodepiccoli2@gmail.com",
+      to: "pierantonio77@gmail.com",
       subject: "Messaggio dal form di contatto da #{@full_name}"
     )
   end
