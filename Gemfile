@@ -69,3 +69,5 @@ gem "tailwindcss-rails", "~> 4.3"
 gem "devise", "~> 4.9"
 
 gem "inline_svg", "~> 1.10"
+
+gem "sitemap_generator"
