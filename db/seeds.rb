@@ -1,9 +1,18 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+AffiliateProduct.create(title: "DJI Osmo Action 5 Pro", image_url: "https://m.media-amazon.com/images/I/71LN4iT1PqL._AC_SL1500_.jpg", affiliate_url: "https://amzn.to/46iphxS")
+AffiliateProduct.create(title: "DJI Mini 3", image_url: "https://m.media-amazon.com/images/I/51XA64YttvL._AC_SL1200_.jpg", affiliate_url: "https://amzn.to/48yM6if")
+AffiliateProduct.create(title: "Insta360 X3", image_url: "https://m.media-amazon.com/images/I/61RldGH-ESL._AC_SL1500_.jpg", affiliate_url: "https://amzn.to/4nknTAY")
+AffiliateProduct.create(title: "Handpresso - Macchina Caffè", image_url: "https://m.media-amazon.com/images/I/51xqSmllY6L._AC_SL1000_.jpg", affiliate_url: "https://amzn.to/4notO80")
+AffiliateProduct.create(title: "DJI Mic Mini", image_url: "https://m.media-amazon.com/images/I/61IwwXaxgFL._AC_SL1500_.jpg", affiliate_url: "https://amzn.to/4pIZVRy")
+AffiliateProduct.create(title: "Scaldavivande Elettrico Portatile 2L", image_url: "https://m.media-amazon.com/images/I/911x6i--aqL._AC_SX679_.jpg", affiliate_url: "https://amzn.to/4nLfcPN")
+AffiliateProduct.create(title: "Bomboletta cartuccia a gas da 390 ml", image_url: "https://m.media-amazon.com/images/I/61rmYQ3RWTL._AC_SX679_.jpg", affiliate_url: "https://amzn.to/4myeVyK")
+AffiliateProduct.create(title: "Campingaz CV 470 Plus Cartuccia Gas 4X", image_url: "https://m.media-amazon.com/images/I/81DXY5djIGL._AC_SX679_.jpg", affiliate_url: "https://amzn.to/48zpRJ1")
+AffiliateProduct.create(title: "Fornello a Gas Portatile, con Valigetta", image_url: "https://m.media-amazon.com/images/I/61+sRHpfx3L._AC_SX679_.jpg", affiliate_url: "https://amzn.to/4gFCHYm")
+AffiliateProduct.create(title: "Plus Fornello a Gas per Campeggio", image_url: "https://m.media-amazon.com/images/I/71HzXnUGOdL._AC_SX679_.jpg", affiliate_url: "https://amzn.to/3KczGTj")
+AffiliateProduct.create(title: "DJI Action 2 Dual Screen Combo (32GB)", image_url: "https://m.media-amazon.com/images/I/611HKM1yYEL._AC_SX679_.jpg", affiliate_url: "https://amzn.to/3Kjrtwz")
+AffiliateProduct.create(title: "Action 2 Magnetic Protective Case", image_url: "https://m.media-amazon.com/images/I/61Yv5xTkHLL._AC_SX679_.jpg", affiliate_url: "https://amzn.to/4myfxEy")
+AffiliateProduct.create(title: "Apple Portatile MacBook Air 13''", image_url: "https://m.media-amazon.com/images/I/716FZpmdOaL._AC_SX679_.jpg", affiliate_url: "https://amzn.to/3IDB00U")
+AffiliateProduct.create(title: "Adattatore magnetico con testa sferica per DJI Action 2", image_url: "https://m.media-amazon.com/images/I/51MpxOfsg5L._AC_SX679_.jpg", affiliate_url: "https://amzn.to/4nk0HCJ")
+AffiliateProduct.create(title: "Occhi LED per Camion e Auto", image_url: "https://m.media-amazon.com/images/I/61Pu-3xF7wL._AC_SX679_.jpg", affiliate_url: "https://amzn.to/4mzt5Q2")
+AffiliateProduct.create(title: "Treppiede Smartphone Goocong Flessibile", image_url: "https://m.media-amazon.com/images/I/61o70GcwlsL._AC_SX679_.jpg", affiliate_url: "https://amzn.to/3KENO7G")
+AffiliateProduct.create(title: "70mai Dash Cam 4K", image_url: "https://m.media-amazon.com/images/I/712ik4uLueL._AC_SX679_.jpg", affiliate_url: "https://amzn.to/4gFlmOZ")
+AffiliateProduct.create(title: "TomTom Navigatore per camion professionale", image_url: "https://m.media-amazon.com/images/I/51Se+fxbV2L._AC_SX679_.jpg", affiliate_url: "https://amzn.to/46kGk2l")
