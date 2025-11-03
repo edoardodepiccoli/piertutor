@@ -83,9 +83,9 @@
 </section>
 
 <%# CONTACT SECTION %>
-<section id="contact" class="relative min-h-[100vh] flex items-center overflow-hidden lg:min-h-[85vh]">
+<section id="contact" class="relative min-h-[100vh] flex items-center overflow-hidden lg:min-h-[85vh] isolate z-0">
   <!-- Background Image -->
-  <img src="<%= asset_path("contact.webp") %>" alt="piertutor al telefono" class="z-20 absolute inset-0 w-full h-full object-cover object-[70%_30%] lg:object-[60%_30%]"/>
+  <img src="<%= asset_path("contact.webp") %>" alt="piertutor al telefono" class="z-20 absolute inset-0 w-full h-full object-cover object-[70%_30%] lg:object-[60%_30%] transform-gpu will-change-transform"/>
   
   <!-- Dark overlay -->
   <div class="z-30 absolute inset-0 bg-black/60"></div>
