@@ -1,4 +1,6 @@
 class SubmissionsController < ApplicationController
+  invisible_captcha only: [ :create ], honeypot: :subtitle
+
   def new
     @submission = Submission.new
   end

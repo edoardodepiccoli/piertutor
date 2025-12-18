@@ -101,6 +101,7 @@
       <!-- Right content - Form -->
       <div class="w-full lg:max-w-lg lg:flex-shrink-0">
         <%= form_with model: @submission, local: true, class: "space-y-4" do |form| %>
+          <%= invisible_captcha :subtitle, honeymoon: 2 %>
           <!-- Nome Field -->
           <div class="form-control">
             <%= form.text_field :full_name,
