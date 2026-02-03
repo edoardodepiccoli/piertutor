@@ -133,8 +133,6 @@ GEM
     inline_svg (1.10.0)
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
-    invisible_captcha (2.3.0)
-      rails (>= 5.2)
     io-console (0.8.1)
     irb (1.15.2)
       pp (>= 0.6.0)
@@ -416,7 +414,6 @@ DEPENDENCIES
   dotenv
   importmap-rails
   inline_svg (~> 1.10)
-  invisible_captcha
   jbuilder
   kamal
   letter_opener

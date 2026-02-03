@@ -1,8 +1,9 @@
 class AffiliateProductsController < ApplicationController
-  before_action :authenticate_user!, only: [ :new, :create ]
+  before_action :authenticate_user!, only: [ :new, :create, :destroy, :toggle_highlight ]
 
   def index
-    @affiliate_products = AffiliateProduct.order(created_at: :desc)
+    @highlighted_products = AffiliateProduct.where(highlighted: true).order(created_at: :desc)
+    @regular_products = AffiliateProduct.where(highlighted: false).order(created_at: :desc)
   end
 
   def new
@@ -27,6 +28,14 @@ class AffiliateProductsController < ApplicationController
     @affiliate_product = AffiliateProduct.find(params[:id])
     @affiliate_product.destroy
     redirect_to affiliate_products_path, notice: "Prodotto eliminato"
+  end
+
+  def toggle_highlight
+    @affiliate_product = AffiliateProduct.find(params[:id])
+    @affiliate_product.update(highlighted: !@affiliate_product.highlighted)
+    
+    status = @affiliate_product.highlighted? ? "messo in evidenza" : "rimosso dall'evidenza"
+    redirect_to affiliate_products_path, notice: "Prodotto #{status}"
   end
 
   private

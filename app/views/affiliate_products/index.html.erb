@@ -20,41 +20,29 @@
   </div>
 </div>
 
-<%# PRODUCT LIST %>
+<%# HIGHLIGHTED PRODUCTS %>
+<% if @highlighted_products.any? %>
+  <section class="bg-brand py-16 px-8">
+    <div class="max-w-[1200px] mx-auto">
+      <h2 class="text-3xl font-bold text-black mb-8 text-center">In Evidenza</h2>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <% @highlighted_products.each do |affiliate_product| %>
+          <%= render partial: 'product_card', locals: { affiliate_product: affiliate_product, highlighted: true } %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<%# REGULAR PRODUCT LIST %>
 <section class="bg-gray-100 py-16 px-8">
   <div class="max-w-[1200px] mx-auto">
+    <% if @highlighted_products.any? %>
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Altri Prodotti</h2>
+    <% end %>
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <% @affiliate_products.each do |affiliate_product| %>
-        <div class="bg-white flex flex-col border border-gray-200 overflow-hidden">
-          <!-- Image -->
-          <div class="w-full flex items-center justify-center p-4">
-            <img src="<%= affiliate_product.image_url %>" 
-                 alt="<%= affiliate_product.title %>"
-                 class="w-full h-64 object-contain"/>
-          </div>
-
-          <!-- Content -->
-          <div class="flex flex-col flex-grow p-6">
-            <h2 class="text-lg font-semibold mb-4 text-gray-900"><%= affiliate_product.title %></h2>
-            
-            <div class="mt-auto flex flex-col gap-3">
-              <a href="<%= affiliate_product.affiliate_url %>" target="_blank" rel="nofollow" 
-                 class="translate-x-[2px] w-full px-4 py-2 bg-brand text-black font-semibold text-center border border-black shadow-[-4px_4px_0_0_#000] transition-all duration-150 
-                        hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer 
-                        active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">
-                Guarda su Amazon
-              </a>
-
-              <% if current_user %>
-                <%= link_to 'Elimina', affiliate_product_path(affiliate_product),
-                  data: { turbo_method: :delete, turbo_confirm: 'Sicuro?' },
-                  class: "translate-x-[2px] w-full px-4 py-2 bg-red-600 text-white font-semibold text-center border border-black shadow-[-4px_4px_0_0_#000] transition-all duration-150 
-                          hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer 
-                          active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none" %>
-              <% end %>
-            </div>
-          </div>
-        </div>
+      <% @regular_products.each do |affiliate_product| %>
+        <%= render partial: 'product_card', locals: { affiliate_product: affiliate_product, highlighted: false } %>
       <% end %>
     </div>
   </div>
