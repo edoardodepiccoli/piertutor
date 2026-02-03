@@ -110,3 +110,24 @@ h1 span, h2 span, h3 span {
     opacity: 1;
   }
 }
+
+/* Marquee/Ticker animation */
+.marquee-container {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-right: 0;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

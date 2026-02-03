@@ -1,30 +1,55 @@
-<div class="bg-white flex flex-col border-2 <%= highlighted ? 'border-black shadow-lg' : 'border-gray-200' %> overflow-hidden">
+<div class="relative bg-white flex flex-col h-full <%= highlighted ? 'border-2 border-black shadow-[0_0_30px_rgba(255,255,4,0.3)]' : 'border border-gray-200' %> overflow-hidden group transition-all duration-300 hover:shadow-xl">
+  <% if highlighted %>
+    <!-- Highlighted Badge with Marquee -->
+    <div class="absolute top-0 left-0 right-0 bg-black py-2 text-sm font-bold tracking-wider z-10 overflow-hidden">
+      <div class="marquee-container">
+        <span class="marquee-text" style="color: #FFFF04;">
+          CONSIGLIATO DA PIER — CONSIGLIATO DA PIER — CONSIGLIATO DA PIER — CONSIGLIATO DA PIER —&nbsp;
+        </span>
+        <span class="marquee-text" style="color: #FFFF04;">
+          CONSIGLIATO DA PIER — CONSIGLIATO DA PIER — CONSIGLIATO DA PIER — CONSIGLIATO DA PIER —&nbsp;
+        </span>
+      </div>
+    </div>
+  <% end %>
+
   <!-- Image -->
-  <div class="w-full flex items-center justify-center p-4">
+  <div class="w-full flex items-center justify-center p-4 <%= highlighted ? 'pt-12' : '' %> bg-white">
     <img src="<%= affiliate_product.image_url %>" 
          alt="<%= affiliate_product.title %>"
-         class="w-full h-64 object-contain"/>
+         class="w-full h-64 object-contain transition-transform duration-300 group-hover:scale-105"/>
   </div>
 
   <!-- Content -->
-  <div class="flex flex-col flex-grow p-6">
+  <div class="flex flex-col flex-grow p-6 <%= highlighted ? 'bg-gray-50' : '' %>">
     <h2 class="text-lg font-semibold mb-4 text-gray-900"><%= affiliate_product.title %></h2>
     
     <div class="mt-auto flex flex-col gap-3">
       <a href="<%= affiliate_product.affiliate_url %>" target="_blank" rel="nofollow" 
-         class="translate-x-[2px] w-full px-4 py-2 bg-brand text-black font-semibold text-center border border-black shadow-[-4px_4px_0_0_#000] transition-all duration-150 
+         class="translate-x-[2px] w-full px-4 py-3 text-black font-semibold text-center border border-black shadow-[-4px_4px_0_0_#000] transition-all duration-150 
                 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer 
-                active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">
+                active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none"
+         style="background-color: #FFFF04;">
         Guarda su Amazon
       </a>
 
       <% if current_user %>
-        <%= link_to toggle_highlight_affiliate_product_path(affiliate_product),
-          data: { turbo_method: :patch },
-          class: "translate-x-[2px] w-full px-4 py-2 #{affiliate_product.highlighted? ? 'bg-gray-600' : 'bg-yellow-500'} text-#{affiliate_product.highlighted? ? 'white' : 'black'} font-semibold text-center border border-black shadow-[-4px_4px_0_0_#000] transition-all duration-150 
-                  hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer 
-                  active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none" do %>
-          <%= affiliate_product.highlighted? ? 'Rimuovi evidenza' : 'Metti in evidenza' %>
+        <% if affiliate_product.highlighted? %>
+          <%= link_to toggle_highlight_affiliate_product_path(affiliate_product),
+            data: { turbo_method: :patch },
+            class: "translate-x-[2px] w-full px-4 py-2 bg-gray-600 text-white font-semibold text-center border border-black shadow-[-4px_4px_0_0_#000] transition-all duration-150 
+                    hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer 
+                    active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none" do %>
+            Rimuovi evidenza
+          <% end %>
+        <% else %>
+          <%= link_to toggle_highlight_affiliate_product_path(affiliate_product),
+            data: { turbo_method: :patch },
+            class: "translate-x-[2px] w-full px-4 py-2 bg-gray-800 text-white font-semibold text-center border border-black shadow-[-4px_4px_0_0_#000] transition-all duration-150 
+                    hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer 
+                    active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none" do %>
+            Metti in evidenza
+          <% end %>
         <% end %>
 
         <%= link_to 'Elimina', affiliate_product_path(affiliate_product),

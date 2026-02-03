@@ -3,15 +3,17 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["item"]
   static values = { 
-    threshold: { type: Number, default: 0.1 },
+    threshold: { type: Number, default: 0.05 },
     delay: { type: Number, default: 0 },
-    stagger: { type: Number, default: 100 }
+    stagger: { type: Number, default: 50 }
   }
 
   connect() {
+    this.revealedCount = 0
+    
     this.observer = new IntersectionObserver(
       (entries) => this.handleIntersection(entries),
-      { threshold: this.thresholdValue, rootMargin: "0px 0px -50px 0px" }
+      { threshold: this.thresholdValue, rootMargin: "50px 0px 50px 0px" }
     )
 
     this.itemTargets.forEach((item) => {
@@ -25,19 +27,23 @@ export default class extends Controller {
   }
 
   handleIntersection(entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const item = entry.target
-        const index = this.itemTargets.indexOf(item)
-        const delay = this.delayValue + (index * this.staggerValue)
-        
+    // Collect all newly intersecting items
+    const intersectingItems = entries
+      .filter(entry => entry.isIntersecting)
+      .map(entry => entry.target)
+    
+    // Reveal them with minimal stagger
+    intersectingItems.forEach((item, batchIndex) => {
+      const delay = this.delayValue + (batchIndex * this.staggerValue)
+      
+      requestAnimationFrame(() => {
         setTimeout(() => {
           item.classList.remove("reveal-hidden")
           item.classList.add("reveal-visible")
         }, delay)
-        
-        this.observer.unobserve(item)
-      }
+      })
+      
+      this.observer.unobserve(item)
     })
   }
 }

@@ -1,33 +1,48 @@
-<% content_for :title, "@piertutor | Prodotti Affiliati" %>
-<% content_for :meta_description, "Prodotti affiliati consigliati da Piertutor" %>
+<% content_for :title, "@piertutor | I Miei Prodotti Consigliati" %>
+<% content_for :meta_description, "La mia selezione personale di prodotti che uso ogni giorno. Attrezzatura, gadget e accessori testati on the road." %>
 
 <%# BANNER %>
-<div class="relative h-64 md:h-128 w-full">
+<section class="relative min-h-[50vh] lg:min-h-[60vh] flex items-end overflow-hidden pt-16 lg:pt-20">
   <!-- Background Image -->
-  <div class="absolute inset-0 bg-cover md:bg-fixed bg-bottom" style="background-image: url(<%= asset_path('driving.webp') %>);"></div>
+  <div class="absolute inset-0 bg-cover bg-center lg:bg-fixed" style="background-image: url(<%= asset_path('driving.webp') %>);"></div>
 
   <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-black opacity-60"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
 
   <!-- Content -->
-  <div class="relative flex flex-col justify-end items-center h-full text-center text-white p-8 gap-4">
-    <h1 class="text-4xl md:text-6xl font-bold max-w-3xl">Prodotti Affiliati</h1>
+  <div class="relative max-w-[1200px] mx-auto w-full px-8 py-12 lg:py-20 lg:px-0"
+       data-controller="reveal" data-reveal-stagger-value="150">
+    <p class="text-brand archivo text-lg mb-2 lg:text-xl" data-reveal-target="item">La mia selezione</p>
+    <h1 class="text-4xl lg:text-6xl text-white mb-4 lg:mb-6" data-reveal-target="item">
+      Prodotti che <span class="text-brand">uso davvero</span>.
+    </h1>
+    <p class="text-lg lg:text-xl text-white/80 max-w-2xl" data-reveal-target="item">
+      Niente sponsorizzazioni forzate. Qui trovi solo quello che ho testato personalmente, 
+      in cabina e fuori. Se lo consiglio, è perché ci credo.
+    </p>
     <% if current_user %>
-      <div class="w-full max-w-64 mx-auto">
-        <%= link_to "Aggiungi Prodotto", new_affiliate_product_path, class: "btn btn-outline btn-primary-content w-full" %>
+      <div class="mt-6" data-reveal-target="item">
+        <%= link_to "Aggiungi Prodotto", new_affiliate_product_path, 
+            class: "translate-x-[2px] inline-block px-6 py-3 bg-white text-black font-semibold border border-black shadow-[-4px_4px_0_0_#FFFF04] transition-all duration-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none" %>
       </div>
     <% end %>
   </div>
-</div>
+</section>
 
 <%# HIGHLIGHTED PRODUCTS %>
 <% if @highlighted_products.any? %>
-  <section class="bg-brand py-16 px-8">
-    <div class="max-w-[1200px] mx-auto">
-      <h2 class="text-3xl font-bold text-black mb-8 text-center">In Evidenza</h2>
+  <section class="bg-black py-16 px-8 border-t-4 border-brand">
+    <div class="max-w-[1200px] mx-auto" data-controller="reveal" data-reveal-stagger-value="50">
+      <div class="text-center mb-12" data-reveal-target="item">
+        <p class="text-brand archivo text-lg mb-2">I miei preferiti</p>
+        <h2 class="text-3xl lg:text-5xl text-white mb-4">Top <span class="text-brand">Picks</span></h2>
+        <p class="text-white/70 max-w-xl mx-auto">I prodotti che uso di più e che consiglio a tutti. Qualità garantita.</p>
+      </div>
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <% @highlighted_products.each do |affiliate_product| %>
-          <%= render partial: 'product_card', locals: { affiliate_product: affiliate_product, highlighted: true } %>
+        <% @highlighted_products.each_with_index do |affiliate_product, index| %>
+          <div data-reveal-target="item">
+            <%= render partial: 'product_card', locals: { affiliate_product: affiliate_product, highlighted: true, index: index } %>
+          </div>
         <% end %>
       </div>
     </div>
@@ -36,13 +51,24 @@
 
 <%# REGULAR PRODUCT LIST %>
 <section class="bg-gray-100 py-16 px-8">
-  <div class="max-w-[1200px] mx-auto">
+  <div class="max-w-[1200px] mx-auto" data-controller="reveal" data-reveal-stagger-value="40">
     <% if @highlighted_products.any? %>
-      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Altri Prodotti</h2>
+      <div class="text-center mb-12" data-reveal-target="item">
+        <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Altri Prodotti</h2>
+        <p class="text-gray-600 max-w-xl mx-auto">Tutta la mia selezione completa di prodotti testati e approvati.</p>
+      </div>
+    <% else %>
+      <div class="text-center mb-12" data-reveal-target="item">
+        <p class="text-brand archivo text-lg mb-2">La mia selezione</p>
+        <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Tutti i Prodotti</h2>
+        <p class="text-gray-600 max-w-xl mx-auto">Attrezzatura, gadget e accessori che uso ogni giorno. Testati on the road.</p>
+      </div>
     <% end %>
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <% @regular_products.each do |affiliate_product| %>
-        <%= render partial: 'product_card', locals: { affiliate_product: affiliate_product, highlighted: false } %>
+        <div data-reveal-target="item">
+          <%= render partial: 'product_card', locals: { affiliate_product: affiliate_product, highlighted: false, index: nil } %>
+        </div>
       <% end %>
     </div>
   </div>
