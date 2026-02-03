@@ -21,25 +21,28 @@
           
           <!-- Titolo -->
           <div class="form-control">
+            <%= form.label :title, "Titolo del prodotto", class: "block text-sm font-medium mb-1" %>
             <%= form.text_field :title,
                                 class: "w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:border-white/50 focus:bg-white/15 focus:outline-none transition-all duration-200",
-                                placeholder: "DJI Osmo Pocket 3",
+                                placeholder: "es. DJI Osmo Pocket 3",
                                 required: true %>
           </div>
 
           <!-- Link Affiliato -->
           <div class="form-control">
+            <%= form.label :affiliate_url, "Link affiliato Amazon", class: "block text-sm font-medium mb-1" %>
             <%= form.text_field :affiliate_url,
                                 class: "w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:border-white/50 focus:bg-white/15 focus:outline-none transition-all duration-200",
-                                placeholder: "https://amzn.eu/d/8aD...",
+                                placeholder: "es. https://amzn.eu/d/8aD...",
                                 required: true %>
           </div>
 
           <!-- Link Immagine -->
           <div class="form-control">
+            <%= form.label :image_url, "URL immagine prodotto", class: "block text-sm font-medium mb-1" %>
             <%= form.text_field :image_url,
                                 class: "w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:border-white/50 focus:bg-white/15 focus:outline-none transition-all duration-200",
-                                placeholder: "https://m.media-amazon.com/images/I/81phR....",
+                                placeholder: "es. https://m.media-amazon.com/images/I/81phR...",
                                 required: true %>
           </div>
 

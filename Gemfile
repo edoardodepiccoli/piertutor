@@ -71,5 +71,3 @@ gem "devise", "~> 4.9"
 gem "inline_svg", "~> 1.10"
 
 gem "sitemap_generator"
-
-gem 'invisible_captcha'

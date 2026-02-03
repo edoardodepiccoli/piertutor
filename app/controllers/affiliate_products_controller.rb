@@ -2,7 +2,7 @@ class AffiliateProductsController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create ]
 
   def index
-    @affiliate_products = AffiliateProduct.all
+    @affiliate_products = AffiliateProduct.order(created_at: :desc)
   end
 
   def new
