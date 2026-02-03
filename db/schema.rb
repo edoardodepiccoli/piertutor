@@ -10,21 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_22_085606) do
+ActiveRecord::Schema[8.0].define(version: 2026_02_03_000001) do
   create_table "affiliate_products", force: :cascade do |t|
     t.string "title"
     t.string "image_url"
     t.string "affiliate_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "submissions", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "full_name", null: false
-    t.string "email", null: false
-    t.text "message", null: false
+    t.boolean "highlighted", default: false, null: false
   end
 
   create_table "users", force: :cascade do |t|
