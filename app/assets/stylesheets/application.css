@@ -17,15 +17,25 @@
   font-variation-settings: "wdth" 100;
 }
 
-::selection, .highlighted{
+::selection {
   background-color: #FFFF04;
   color: black;
+}
+
+.highlighted, .text-brand {
+  color: #FFFF04 !important;
+  background: none !important;
 }
 
 h1, h2, h3 {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+h1 span, h2 span, h3 span {
+  font-family: inherit;
+  font-weight: inherit;
 }
 
 .archivo {
