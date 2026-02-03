@@ -51,15 +51,27 @@
     <div class="flex flex-wrap justify-start items-center gap-6 mt-12 lg:flex-col lg:gap-10"
          data-controller="reveal" data-reveal-stagger-value="150">
       <div class="flex flex-col justify-center items-center" data-reveal-target="item">
-        <span class="text-5xl archivo-black lg:text-7xl text-brand">5M+</span>
+        <span class="text-5xl archivo-black lg:text-7xl text-brand"
+              data-controller="counter"
+              data-counter-target-value="5"
+              data-counter-suffix-value="M+"
+              data-counter-duration-value="2800">0</span>
         <span class="text-white/70 lg:text-lg">view al mese</span>
       </div>
       <div class="flex flex-col justify-center items-center" data-reveal-target="item">
-        <span class="text-5xl archivo-black lg:text-7xl text-brand">50k+</span>
+        <span class="text-5xl archivo-black lg:text-7xl text-brand"
+              data-controller="counter"
+              data-counter-target-value="70"
+              data-counter-suffix-value="k+"
+              data-counter-duration-value="2800">0</span>
         <span class="text-white/70 lg:text-lg">compagni di viaggio</span>
       </div>
       <div class="flex flex-col justify-center items-center" data-reveal-target="item">
-        <span class="text-5xl archivo-black lg:text-7xl text-brand">20+</span>
+        <span class="text-5xl archivo-black lg:text-7xl text-brand"
+              data-controller="counter"
+              data-counter-target-value="20"
+              data-counter-suffix-value="+"
+              data-counter-duration-value="2200">0</span>
         <span class="text-white/70 lg:text-lg">anni on the road</span>
       </div>
     </div>
