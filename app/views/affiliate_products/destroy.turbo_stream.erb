@@ -7,9 +7,13 @@
 <% end %>
 
 <%= turbo_stream.append "flash_messages" do %>
-  <div data-controller="flash" data-flash-duration-value="2000"
-       class="px-6 py-3 rounded-lg shadow-lg transform transition-all duration-500 ease-in-out
-              translate-y-full opacity-0 bg-blue-600 text-white">
-    Prodotto eliminato
+  <div data-controller="flash" data-flash-duration-value="3000"
+       class="flex items-center gap-3 px-5 py-3 border-2 border-brand bg-black text-white
+              shadow-[0_4px_20px_rgba(0,0,0,0.4)] transform transition-all duration-500 ease-in-out
+              translate-y-full opacity-0">
+    <svg class="w-5 h-5 shrink-0" style="color: #FFFF04;" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
+    </svg>
+    <span class="text-sm font-semibold tracking-wide">Prodotto eliminato</span>
   </div>
 <% end %>
