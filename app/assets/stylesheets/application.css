@@ -17,6 +17,10 @@
   font-variation-settings: "wdth" 100;
 }
 
+html {
+  scroll-behavior: auto !important;
+}
+
 ::selection {
   background-color: #FFFF04;
   color: black;
