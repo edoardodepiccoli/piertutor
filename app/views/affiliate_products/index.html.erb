@@ -29,47 +29,5 @@
   </div>
 </section>
 
-<%# HIGHLIGHTED PRODUCTS %>
-<% if @highlighted_products.any? %>
-  <section class="bg-black py-16 px-8 border-t-4 border-brand">
-    <div class="max-w-[1200px] mx-auto" data-controller="reveal" data-reveal-stagger-value="50">
-      <div class="text-center mb-12" data-reveal-target="item">
-        <p class="text-brand archivo text-lg mb-2">I miei preferiti</p>
-        <h2 class="text-3xl lg:text-5xl text-white mb-4">Top <span class="text-brand">Picks</span></h2>
-        <p class="text-white/70 max-w-xl mx-auto">I prodotti che uso di più e che consiglio a tutti. Qualità garantita.</p>
-      </div>
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <% @highlighted_products.each_with_index do |affiliate_product, index| %>
-          <div data-reveal-target="item">
-            <%= render partial: 'product_card', locals: { affiliate_product: affiliate_product, highlighted: true, index: index } %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </section>
-<% end %>
-
-<%# REGULAR PRODUCT LIST %>
-<section class="bg-gray-100 py-16 px-8">
-  <div class="max-w-[1200px] mx-auto" data-controller="reveal" data-reveal-stagger-value="40">
-    <% if @highlighted_products.any? %>
-      <div class="text-center mb-12" data-reveal-target="item">
-        <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Altri Prodotti</h2>
-        <p class="text-gray-600 max-w-xl mx-auto">Tutta la mia selezione completa di prodotti testati e approvati.</p>
-      </div>
-    <% else %>
-      <div class="text-center mb-12" data-reveal-target="item">
-        <p class="text-brand archivo text-lg mb-2">La mia selezione</p>
-        <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Tutti i Prodotti</h2>
-        <p class="text-gray-600 max-w-xl mx-auto">Attrezzatura, gadget e accessori che uso ogni giorno. Testati on the road.</p>
-      </div>
-    <% end %>
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <% @regular_products.each do |affiliate_product| %>
-        <div data-reveal-target="item">
-          <%= render partial: 'product_card', locals: { affiliate_product: affiliate_product, highlighted: false, index: nil } %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</section>
+<%= render partial: "highlighted_products_section", locals: { reveal: true } %>
+<%= render partial: "regular_products_section", locals: { reveal: true } %>

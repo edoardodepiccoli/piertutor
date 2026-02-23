@@ -1,0 +1,20 @@
+<div id="highlighted_products_section">
+  <% if @highlighted_products.any? %>
+    <section class="bg-black py-16 px-8 border-t-4 border-brand">
+      <div class="max-w-[1200px] mx-auto" <%= 'data-controller="reveal" data-reveal-stagger-value="50"'.html_safe if local_assigns.fetch(:reveal, false) %>>
+        <div class="text-center mb-12" <%= 'data-reveal-target="item"'.html_safe if local_assigns.fetch(:reveal, false) %>>
+          <p class="text-brand archivo text-lg mb-2">I miei preferiti</p>
+          <h2 class="text-3xl lg:text-5xl text-white mb-4">Top <span class="text-brand">Picks</span></h2>
+          <p class="text-white/70 max-w-xl mx-auto">I prodotti che uso di più e che consiglio a tutti. Qualità garantita.</p>
+        </div>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <% @highlighted_products.each_with_index do |affiliate_product, index| %>
+            <div <%= 'data-reveal-target="item"'.html_safe if local_assigns.fetch(:reveal, false) %>>
+              <%= render partial: 'product_card', locals: { affiliate_product: affiliate_product, highlighted: true, index: index } %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+</div>

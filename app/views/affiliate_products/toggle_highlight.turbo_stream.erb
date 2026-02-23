@@ -1,0 +1,7 @@
+<%= turbo_stream.replace "highlighted_products_section" do %>
+  <%= render partial: "highlighted_products_section", locals: { reveal: false } %>
+<% end %>
+
+<%= turbo_stream.replace "regular_products_section" do %>
+  <%= render partial: "regular_products_section", locals: { reveal: false } %>
+<% end %>

@@ -1,0 +1,25 @@
+<div id="regular_products_section">
+  <section class="bg-gray-100 py-16 px-8">
+    <div class="max-w-[1200px] mx-auto" <%= 'data-controller="reveal" data-reveal-stagger-value="40"'.html_safe if local_assigns.fetch(:reveal, false) %>>
+      <% if @highlighted_products.any? %>
+        <div class="text-center mb-12" <%= 'data-reveal-target="item"'.html_safe if local_assigns.fetch(:reveal, false) %>>
+          <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Altri Prodotti</h2>
+          <p class="text-gray-600 max-w-xl mx-auto">Tutta la mia selezione completa di prodotti testati e approvati.</p>
+        </div>
+      <% else %>
+        <div class="text-center mb-12" <%= 'data-reveal-target="item"'.html_safe if local_assigns.fetch(:reveal, false) %>>
+          <p class="text-brand archivo text-lg mb-2">La mia selezione</p>
+          <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Tutti i Prodotti</h2>
+          <p class="text-gray-600 max-w-xl mx-auto">Attrezzatura, gadget e accessori che uso ogni giorno. Testati on the road.</p>
+        </div>
+      <% end %>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <% @regular_products.each do |affiliate_product| %>
+          <div <%= 'data-reveal-target="item"'.html_safe if local_assigns.fetch(:reveal, false) %>>
+            <%= render partial: 'product_card', locals: { affiliate_product: affiliate_product, highlighted: false, index: nil } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>

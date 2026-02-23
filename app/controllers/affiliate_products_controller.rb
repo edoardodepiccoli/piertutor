@@ -33,9 +33,14 @@ class AffiliateProductsController < ApplicationController
   def toggle_highlight
     @affiliate_product = AffiliateProduct.find(params[:id])
     @affiliate_product.update(highlighted: !@affiliate_product.highlighted)
-    
-    status = @affiliate_product.highlighted? ? "messo in evidenza" : "rimosso dall'evidenza"
-    redirect_to affiliate_products_path, notice: "Prodotto #{status}"
+
+    @highlighted_products = AffiliateProduct.where(highlighted: true).order(created_at: :desc)
+    @regular_products = AffiliateProduct.where(highlighted: false).order(created_at: :desc)
+
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to affiliate_products_path }
+    end
   end
 
   private
