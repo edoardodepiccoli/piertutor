@@ -1,0 +1,15 @@
+<%= turbo_stream.replace "highlighted_products_section" do %>
+  <%= render partial: "highlighted_products_section", locals: { reveal: false } %>
+<% end %>
+
+<%= turbo_stream.replace "regular_products_section" do %>
+  <%= render partial: "regular_products_section", locals: { reveal: false } %>
+<% end %>
+
+<%= turbo_stream.append "flash_messages" do %>
+  <div data-controller="flash" data-flash-duration-value="2000"
+       class="px-6 py-3 rounded-lg shadow-lg transform transition-all duration-500 ease-in-out
+              translate-y-full opacity-0 bg-blue-600 text-white">
+    Prodotto eliminato
+  </div>
+<% end %>

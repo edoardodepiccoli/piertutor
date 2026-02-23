@@ -45,11 +45,14 @@
           <% end %>
 
           <%= link_to affiliate_product_path(affiliate_product),
-            data: { turbo_method: :delete, turbo_confirm: 'Sicuro?' },
+            data: { turbo_method: :delete, controller: "confirm-delete", action: "click->confirm-delete#confirm" },
             title: "Elimina",
             class: "inline-flex items-center justify-center w-8 h-8 rounded-full text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors" do %>
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-4 h-4" data-confirm-delete-target="trashIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/>
+            </svg>
+            <svg class="w-4 h-4 hidden" data-confirm-delete-target="confirmIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5"/>
             </svg>
           <% end %>
         </div>

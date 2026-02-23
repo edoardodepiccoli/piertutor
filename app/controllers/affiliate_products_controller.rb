@@ -27,7 +27,14 @@ class AffiliateProductsController < ApplicationController
   def destroy
     @affiliate_product = AffiliateProduct.find(params[:id])
     @affiliate_product.destroy
-    redirect_to affiliate_products_path, notice: "Prodotto eliminato"
+
+    @highlighted_products = AffiliateProduct.where(highlighted: true).order(created_at: :desc)
+    @regular_products = AffiliateProduct.where(highlighted: false).order(created_at: :desc)
+
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to affiliate_products_path, notice: "Prodotto eliminato" }
+    end
   end
 
   def toggle_highlight

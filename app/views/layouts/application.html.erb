@@ -102,7 +102,7 @@
       </div>
     </nav>
 
-    <div class="fixed bottom-6 inset-x-0 flex flex-col items-center space-y-2 z-50">
+    <div id="flash_messages" class="fixed bottom-6 inset-x-0 flex flex-col items-center space-y-2 z-50">
       <% flash.each do |type, message| %>
         <% next if message.blank? %>
 
