@@ -1,27 +1,45 @@
 <% content_for :title, "@piertutor | Camionista, Content Creator, Volvo Trucks Ambassador" %>
 <% content_for :meta_description, "Pierantonio De Piccoli - Camionista da 20+ anni, Content Creator e Volvo Trucks Ambassador. Milioni di persone ogni mese viaggiano con me." %>
+<% content_for :intro, true %>
 
 <%# HERO SECTION %>
-<section class="relative h-screen overflow-hidden">
-  <!-- Image element positioned behind -->
-  <img src="<%= asset_path("hero.webp") %>" alt="piertutor in posa davanti al suo camion" class="absolute inset-0 w-full h-full object-cover object-[50%_100%] scale-110 lg:scale-130 lg:origin-left"/>
-  
-  <!-- Dark overlay -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-black/90 md:bg-gradient-to-l md:from-black/50 md:to-black/90"></div>
+<section class="relative h-[100dvh] overflow-hidden" data-controller="intro">
+  <img src="<%= asset_path("hero.webp") %>"
+       alt="piertutor in posa davanti al suo camion"
+       data-intro="image"
+       class="absolute inset-0 w-full h-full object-cover object-[50%_25%] md:object-[50%_50%] hero-image"/>
 
-  <div class="max-w-[1200px] mx-auto px-8 relative z-10 text-white pb-16 pt-32 h-full flex flex-col justify-end lg:justify-center lg:px-0 lg:pt-32"
-       data-controller="reveal" data-reveal-stagger-value="150">
-    <h1 class="text-4xl mb-6 lg:text-7xl lg:mb-8 lg:max-w-screen-md leading-tight" data-reveal-target="item"
-        data-controller="typewriter" 
-        data-typewriter-words-value='["Content Creator.", "Influencer.", "Videomaker.", "Viaggiatore.", "Storyteller."]'
-        data-typewriter-interval-value="2500">
-      Camionista.<br/>
-      <span class="text-brand text-cycle-wrapper"><span class="text-cycle" data-typewriter-target="text">Content Creator.</span></span><br/>
-      Volvo Trucks Ambassador.
-    </h1>
-    <div class="flex gap-3" data-reveal-target="item">
-      <a href="#about"><button class="translate-x-[2px] px-4 py-2 bg-brand text-black border-1 border-black shadow-[-4px_4px_0_0_#FFF] transition-all transition-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none hover:cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">Scopri chi sono</button></a>
-      <a href="#contact"><button class="translate-x-[2px] px-4 py-2 bg-white text-black border-1 border-black shadow-[-4px_4px_0_0_#FFF] transition-all transition-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none hover:cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">Contattami</button></a>
+  <div data-intro="image" class="absolute inset-0 hero-overlay"></div>
+
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-0 relative z-10 text-white h-full flex flex-col justify-end">
+    <div class="pb-12 lg:pb-20">
+      <h1 class="text-4xl lg:text-6xl leading-[1.1] tracking-tight max-w-md lg:max-w-xl">
+        <span class="intro-line-wrap block">
+          <span data-intro="line1" class="block pb-0.5 lg:pb-1">Camionista.</span>
+        </span>
+        <span class="intro-line-wrap block"
+              data-controller="typewriter"
+              data-typewriter-words-value='["Content Creator.", "Influencer.", "Videomaker.", "Viaggiatore.", "Storyteller."]'
+              data-typewriter-interval-value="3000">
+          <span data-intro="line2" class="block pb-0.5 lg:pb-1">
+            <span class="text-brand text-cycle-wrapper"><span class="text-cycle" data-typewriter-target="text">Content Creator.</span></span>
+          </span>
+        </span>
+        <span class="intro-line-wrap block">
+          <span data-intro="line3" class="block">Volvo Trucks Ambassador.</span>
+        </span>
+      </h1>
+
+      <div data-intro="accent" class="h-[2px] bg-brand mt-6 lg:mt-8"></div>
+
+      <div data-intro="buttons" class="flex flex-wrap gap-3 mt-5 lg:mt-6">
+        <a href="#about">
+          <button class="translate-x-[2px] px-5 py-2.5 bg-brand text-black font-semibold border border-black shadow-[-4px_4px_0_0_#FFF] transition-all duration-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">Scopri chi sono</button>
+        </a>
+        <a href="#contact">
+          <button class="translate-x-[2px] px-5 py-2.5 text-white font-semibold border border-white/30 backdrop-blur-sm shadow-[-4px_4px_0_0_rgba(255,255,255,0.1)] transition-all duration-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none hover:border-white/50 cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">Contattami</button>
+        </a>
+      </div>
     </div>
   </div>
 </section>

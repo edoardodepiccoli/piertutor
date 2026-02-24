@@ -135,3 +135,106 @@ h1 span, h2 span, h3 span {
     transform: translateX(-50%);
   }
 }
+
+/* Hero section */
+.hero-image {
+  transform: scale(1.12);
+  transform-origin: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-image {
+    transform: scale(1.15);
+    transform-origin: left center;
+  }
+}
+
+.hero-image.intro-revealed {
+  animation: kenBurns 18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes kenBurns {
+  to { transform: scale(1.02); }
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35) 0%,
+    rgba(0,0,0,0.3) 25%,
+    rgba(0,0,0,0.45) 40%,
+    rgba(0,0,0,0.7) 55%,
+    rgba(0,0,0,0.9) 68%,
+    black 80%
+  );
+}
+
+@media (min-width: 768px) {
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.3) 0%,
+      rgba(0,0,0,0.25) 30%,
+      rgba(0,0,0,0.35) 50%,
+      rgba(0,0,0,0.65) 65%,
+      rgba(0,0,0,0.9) 78%,
+      black 90%
+    );
+  }
+}
+
+/* Intro loading animation */
+[data-intro] {
+  opacity: 0;
+}
+
+
+[data-intro="buttons"] {
+  transform: translateY(12px);
+}
+
+[data-intro="line1"],
+[data-intro="line2"],
+[data-intro="line3"] {
+  opacity: 1;
+  transform: translateY(110%);
+}
+
+[data-intro="accent"] {
+  opacity: 1;
+  width: 0;
+}
+
+.intro-line-wrap {
+  overflow: hidden;
+}
+
+[data-intro="image"].intro-revealed {
+  opacity: 1;
+  transition: opacity 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-intro="line1"].intro-revealed,
+[data-intro="line2"].intro-revealed,
+[data-intro="line3"].intro-revealed {
+  transform: translateY(0);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-intro="accent"].intro-revealed {
+  width: 3rem;
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 1024px) {
+  [data-intro="accent"].intro-revealed {
+    width: 5rem;
+  }
+}
+
+[data-intro="buttons"].intro-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
