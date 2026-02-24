@@ -11,184 +11,233 @@
 
   <div data-intro="image" class="absolute inset-0 hero-overlay"></div>
 
+  <!-- Decorative blobs -->
+  <div class="blob w-72 h-72 bg-violet/30 -top-20 -right-20 z-10"></div>
+  <div class="blob w-96 h-96 bg-brand/20 -bottom-40 -left-40 z-10"></div>
+
   <div class="max-w-[1200px] mx-auto px-6 lg:px-0 relative z-10 text-white h-full flex flex-col justify-end">
-    <div class="pb-12 lg:pb-20">
-      <h1 class="text-4xl lg:text-6xl leading-[1.1] tracking-tight max-w-md lg:max-w-xl">
+    <div class="pb-16 lg:pb-24">
+      <h1 class="text-5xl lg:text-7xl leading-[1.08] tracking-tight max-w-lg lg:max-w-2xl"
+          data-controller="typewriter"
+          data-typewriter-words-value='["Content Creator.", "Camionista.", "Volvo Trucks Ambassador.", "Influencer.", "Videomaker.", "Viaggiatore.", "Storyteller."]'
+          data-typewriter-interval-value="3000">
         <span class="intro-line-wrap block">
-          <span data-intro="line1" class="block pb-0.5 lg:pb-1">Camionista.</span>
-        </span>
-        <span class="intro-line-wrap block"
-              data-controller="typewriter"
-              data-typewriter-words-value='["Content Creator.", "Influencer.", "Videomaker.", "Viaggiatore.", "Storyteller."]'
-              data-typewriter-interval-value="3000">
-          <span data-intro="line2" class="block pb-0.5 lg:pb-1">
-            <span class="text-brand text-cycle-wrapper"><span class="text-cycle" data-typewriter-target="text">Content Creator.</span></span>
+          <span data-intro="line1" class="block">
+            <span class="text-cycle-wrapper"><span class="text-cycle" data-typewriter-target="text">Content Creator.</span></span>
           </span>
-        </span>
-        <span class="intro-line-wrap block">
-          <span data-intro="line3" class="block">Volvo Trucks Ambassador.</span>
         </span>
       </h1>
 
-      <div data-intro="accent" class="h-[2px] bg-brand mt-6 lg:mt-8"></div>
+      <div data-intro="buttons">
+        <!-- Mobile: icon-only circles -->
+        <div class="flex items-center gap-3 mt-7 lg:hidden">
+          <a href="https://www.instagram.com/piertutor" target="_blank" class="w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-white/90 hover:bg-white/20 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@piertutor" target="_blank" class="w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-white/90 hover:bg-white/20 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/c/PierantonioDePiccoli" target="_blank" class="w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-white/90 hover:bg-white/20 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
 
-      <div data-intro="buttons" class="flex flex-wrap gap-3 mt-5 lg:mt-6">
-        <a href="#about">
-          <button class="translate-x-[2px] px-5 py-2.5 bg-brand text-black font-semibold border border-black shadow-[-4px_4px_0_0_#FFF] transition-all duration-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">Scopri chi sono</button>
-        </a>
-        <a href="#contact">
-          <button class="translate-x-[2px] px-5 py-2.5 text-white font-semibold border border-white/30 backdrop-blur-sm shadow-[-4px_4px_0_0_rgba(255,255,255,0.1)] transition-all duration-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none hover:border-white/50 cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">Contattami</button>
-        </a>
+        <!-- Desktop: pill buttons with text -->
+        <div class="hidden lg:flex flex-wrap items-center gap-3 mt-8">
+          <a href="https://www.instagram.com/piertutor" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/15 text-white/90 text-sm font-medium hover:bg-white/20 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.tiktok.com/@piertutor" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/15 text-white/90 text-sm font-medium hover:bg-white/20 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            TikTok
+          </a>
+          <a href="https://www.youtube.com/c/PierantonioDePiccoli" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/15 text-white/90 text-sm font-medium hover:bg-white/20 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            YouTube
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a href="#about" class="btn-primary">Scopri chi sono</a>
+          <a href="#contact" class="btn-secondary">Contattami</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<%# HELLO SECTION %>
-<section id="about" class="relative min-h-[95vh] lg:min-h-[95vh] lg:flex lg:flex-col lg:justify-center">
-  <img src="<%= asset_path("about.webp") %>" alt="piertutor in svezia per uno shooting con i nuovi volvo aero" class="absolute inset-0 w-full h-full object-cover object-[51%_25%]"/>
-  
-  <div class="absolute inset-0 bg-black/70"></div>
+<%# ABOUT SECTION %>
+<section id="about" class="relative bg-offwhite py-20 lg:py-32 overflow-hidden">
+  <!-- Decorative blobs -->
+  <div class="blob w-80 h-80 bg-brand/20 -top-20 -left-20"></div>
+  <div class="blob w-64 h-64 bg-violet/15 bottom-0 right-0"></div>
 
-  <div class="max-w-[1200px] mx-auto w-full py-24 px-8 relative z-10 text-white flex flex-col lg:flex-row lg:justify-between lg:px-0 lg:gap-24 lg:items-center"
-       data-controller="reveal" data-reveal-stagger-value="100">
-    <div class="lg:max-w-screen-md">
-      <p class="text-brand archivo text-lg mb-2 lg:text-xl" data-reveal-target="item">Piacere di conoscerti</p>
-      <h2 class="text-4xl mb-6 lg:text-6xl lg:mb-8 lg:max-w-screen-md" data-reveal-target="item">Sono <span class="text-brand">Pier</span>.</h2>
-      <p class="text-lg lg:text-xl text-white/90 leading-relaxed" data-reveal-target="item">
-        Mi chiamo Pierantonio De Piccoli, ma per tutti sono <span class="highlighted">Piertutor</span>. 
-        Da oltre 20 anni guido camion su e giù per l'Italia.
-      </p>
-      <p class="text-lg lg:text-xl text-white/90 leading-relaxed mt-4" data-reveal-target="item">
-        Dal 2019 ho iniziato a raccontare questa vita incredibile: 
-        manovre impossibili, albe in autostrada, panorami che tolgono il fiato. 
-        Ogni giorno è un'avventura diversa — e <span class="highlighted">milioni di persone</span> hanno deciso di viverla insieme a me.
-      </p>
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-0 relative z-10">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:gap-20"
+         data-controller="reveal" data-reveal-stagger-value="100">
+
+      <!-- Photo -->
+      <div class="lg:w-5/12 mb-10 lg:mb-0" data-reveal-target="item">
+        <div class="relative">
+          <div class="absolute -inset-3 bg-gradient-to-br from-brand/30 via-coral/20 to-violet/30 rounded-3xl blur-xl"></div>
+          <img src="<%= asset_path("about.webp") %>"
+               alt="piertutor in svezia per uno shooting con i nuovi volvo aero"
+               class="relative w-full aspect-[4/5] object-cover object-[51%_25%] rounded-3xl shadow-2xl"/>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="lg:w-7/12">
+        <p class="text-violet font-semibold text-lg mb-2 tracking-wide" data-reveal-target="item">Ehi, piacere!</p>
+        <h2 class="text-4xl lg:text-6xl mb-6 lg:mb-8 text-navy" data-reveal-target="item">Sono <span class="text-gradient-violet">Pier</span>.</h2>
+        <p class="text-lg lg:text-xl text-warm leading-relaxed" data-reveal-target="item">
+          Mi chiamo Pierantonio De Piccoli, ma per tutti sono <span class="text-violet font-semibold">Piertutor</span>.
+          Da oltre 20 anni guido camion su e gi&ugrave; per l'Italia.
+        </p>
+        <p class="text-lg lg:text-xl text-warm leading-relaxed mt-4" data-reveal-target="item">
+          Dal 2019 ho iniziato a raccontare questa vita incredibile:
+          manovre impossibili, albe in autostrada, panorami che tolgono il fiato.
+          Ogni giorno &egrave; un'avventura diversa &mdash; e <span class="text-violet font-semibold">milioni di persone</span> hanno deciso di viverla insieme a me.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-4 mt-10" data-controller="reveal" data-reveal-stagger-value="150">
+          <div class="stat-card bg-white rounded-2xl p-5 text-center border border-gray-100 shadow-sm" data-reveal-target="item">
+            <span class="text-3xl lg:text-4xl archivo-black text-gradient-violet block"
+                  data-controller="counter"
+                  data-counter-target-value="5"
+                  data-counter-suffix-value="M+"
+                  data-counter-duration-value="2800">0</span>
+            <span class="text-warm text-sm mt-1 block">views al mese</span>
+          </div>
+          <div class="stat-card bg-white rounded-2xl p-5 text-center border border-gray-100 shadow-sm" data-reveal-target="item">
+            <span class="text-3xl lg:text-4xl archivo-black text-gradient-violet block"
+                  data-controller="counter"
+                  data-counter-target-value="70"
+                  data-counter-suffix-value="k+"
+                  data-counter-duration-value="2800">0</span>
+            <span class="text-warm text-sm mt-1 block">followers</span>
+          </div>
+          <div class="stat-card bg-white rounded-2xl p-5 text-center border border-gray-100 shadow-sm" data-reveal-target="item">
+            <span class="text-3xl lg:text-4xl archivo-black text-coral block"
+                  data-controller="counter"
+                  data-counter-target-value="20"
+                  data-counter-suffix-value="+"
+                  data-counter-duration-value="2200">0</span>
+            <span class="text-warm text-sm mt-1 block">anni on the road</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="flex flex-wrap justify-start items-center gap-6 mt-12 lg:flex-col lg:gap-10"
-         data-controller="reveal" data-reveal-stagger-value="150">
-      <div class="flex flex-col justify-center items-center" data-reveal-target="item">
-        <span class="text-5xl archivo-black lg:text-7xl text-brand"
-              data-controller="counter"
-              data-counter-target-value="5"
-              data-counter-suffix-value="M+"
-              data-counter-duration-value="2800">0</span>
-        <span class="text-white/70 lg:text-lg">view al mese</span>
+  </div>
+</section>
+
+<%# BENTO GRID - STORY SECTIONS %>
+<section class="bg-offwhite pb-20 lg:pb-32">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-0"
+       data-controller="reveal" data-reveal-stagger-value="100">
+    <div class="text-center mb-12 lg:mb-16" data-reveal-target="item">
+      <p class="text-violet font-semibold text-lg mb-2 tracking-wide">La mia storia</p>
+      <h2 class="text-4xl lg:text-5xl text-navy">Il <span class="text-gradient-violet">viaggio</span> finora.</h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">
+      <!-- Card 1: Large -->
+      <div class="bento-card rounded-3xl overflow-hidden relative lg:min-h-[480px] lg:row-span-2 group" data-reveal-target="item">
+        <img src="<%= asset_path("selfie.webp") %>" alt="selfie di piertutor" class="bento-image w-full aspect-[16/9] object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"/>
+        <div class="hidden lg:block absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/60 to-navy/20"></div>
+        <div class="bg-navy-light lg:bg-transparent p-7 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:p-10">
+          <p class="text-brand font-semibold text-sm mb-2 uppercase tracking-wider">La mia storia</p>
+          <h3 class="text-2xl lg:text-4xl text-white mb-3">Da cabina a <span class="text-brand">community</span>.</h3>
+          <p class="text-white/70 leading-relaxed lg:max-w-md">
+            Tutto &egrave; iniziato quasi per gioco: un video, poi un altro, e all'improvviso
+            migliaia di persone volevano sapere com'&egrave; davvero la vita di un camionista.
+            Oggi i miei fan mi riconoscono per strada e <span class="text-brand">mi salutano con il clacson</span>.
+          </p>
+        </div>
       </div>
-      <div class="flex flex-col justify-center items-center" data-reveal-target="item">
-        <span class="text-5xl archivo-black lg:text-7xl text-brand"
-              data-controller="counter"
-              data-counter-target-value="70"
-              data-counter-suffix-value="k+"
-              data-counter-duration-value="2800">0</span>
-        <span class="text-white/70 lg:text-lg">compagni di viaggio</span>
+
+      <!-- Card 2: Medium -->
+      <div class="bento-card rounded-3xl overflow-hidden relative lg:min-h-[230px] group" data-reveal-target="item">
+        <img src="<%= asset_path("focus.webp") %>" alt="piertutor al lavoro" class="bento-image w-full aspect-[16/9] object-cover object-[10%_50%] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"/>
+        <div class="hidden lg:block absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/60 to-navy/20"></div>
+        <div class="bg-navy-light lg:bg-transparent p-7 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:p-8">
+          <p class="text-brand font-semibold text-sm mb-2 uppercase tracking-wider">La mia missione</p>
+          <h3 class="text-xl lg:text-3xl text-white mb-2">Intrattenimento <span class="text-brand">serio</span>.</h3>
+          <p class="text-white/70 leading-relaxed">
+            I miei video sono divertenti e dinamici, ma dietro c'&egrave; sempre un messaggio:
+            sicurezza, rispetto, professionalit&agrave;.
+            <span class="text-brand">&Egrave; una responsabilit&agrave; enorme</span> &mdash; e voglio che tutti lo capiscano.
+          </p>
+        </div>
       </div>
-      <div class="flex flex-col justify-center items-center" data-reveal-target="item">
-        <span class="text-5xl archivo-black lg:text-7xl text-brand"
-              data-controller="counter"
-              data-counter-target-value="20"
-              data-counter-suffix-value="+"
-              data-counter-duration-value="2200">0</span>
-        <span class="text-white/70 lg:text-lg">anni on the road</span>
+
+      <!-- Card 3: Medium -->
+      <div class="bento-card rounded-3xl overflow-hidden relative lg:min-h-[230px] group" data-reveal-target="item">
+        <img src="<%= asset_path("group.webp") %>" alt="piertutor con team volvo" class="bento-image w-full aspect-[16/9] object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"/>
+        <div class="hidden lg:block absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/60 to-navy/20"></div>
+        <div class="bg-navy-light lg:bg-transparent p-7 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:p-8">
+          <p class="text-brand font-semibold text-sm mb-2 uppercase tracking-wider">Le collaborazioni</p>
+          <h3 class="text-xl lg:text-3xl text-white mb-2">Ambassador <span class="text-brand">Volvo Trucks</span>.</h3>
+          <p class="text-white/70 leading-relaxed">
+            Oggi collaboro con brand internazionali, viaggio in Svezia per shooting esclusivi
+            e partecipo a eventi in tutta Europa. <span class="text-brand">Tutto nato da un semplice video in cabina</span>.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<%# SECTIONS %>
-<section class="border-t-2 border-brand sticky top-0 min-h-[80vh] flex flex-col justify-end overflow-hidden">
-  <img src="<%= asset_path("selfie.webp") %>" alt="selfie di piertutor" class="absolute inset-0 w-full h-full object-cover object-[50%_50%]"/>
-  
-  <div class="bg-gradient-to-b from-black/50 to-black/90 absolute inset-0"></div>
-
-  <div class="max-w-[1200px] mx-auto w-full py-12 px-8 relative z-10 text-white lg:px-0 lg:py-32"
-       data-controller="reveal" data-reveal-stagger-value="100">
-    <p class="text-brand archivo text-lg mb-2 lg:text-xl" data-reveal-target="item">La mia storia</p>
-    <h2 class="text-4xl mb-6 lg:text-6xl lg:mb-8" data-reveal-target="item">Da cabina<br class="lg:hidden"/> a <span class="text-brand">community</span>.</h2>
-    <p class="text-lg lg:max-w-screen-md lg:text-xl text-white/90 leading-relaxed" data-reveal-target="item">
-      Tutto è iniziato quasi per gioco: un video, poi un altro, e all'improvviso 
-      migliaia di persone volevano sapere com'è davvero la vita di un camionista.
-    </p>
-    <p class="text-lg lg:max-w-screen-md lg:text-xl text-white/90 leading-relaxed mt-4" data-reveal-target="item">
-      Oggi i miei fan mi riconoscono per strada e <span class="highlighted">mi salutano con il clacson</span>. 
-      È surreale, ma è la cosa più bella che potesse capitarmi.
-    </p>
-  </div>
-</section>
-
-<section class="border-t-2 border-brand sticky top-6 min-h-[80vh] flex flex-col justify-end overflow-hidden lg:top-12">
-  <img src="<%= asset_path("focus.webp") %>" alt="selfie di piertutor" class="absolute inset-0 w-full h-full object-cover object-[10%_50%]"/>
-  
-  <div class="bg-gradient-to-b from-black/50 to-black/90 absolute inset-0"></div>
-
-  <div class="max-w-[1200px] mx-auto w-full py-12 px-8 relative z-10 text-white lg:px-0 lg:py-32"
-       data-controller="reveal" data-reveal-stagger-value="100">
-    <p class="text-brand archivo text-lg mb-2 lg:text-xl" data-reveal-target="item">La mia missione</p>
-    <h2 class="text-4xl mb-6 lg:text-6xl lg:mb-8" data-reveal-target="item">Intrattenimento<br class="lg:hidden"/> <span class="text-brand">serio</span>.</h2>
-    <p class="text-lg lg:max-w-screen-md lg:text-xl text-white/90 leading-relaxed" data-reveal-target="item">
-      I miei video sono divertenti, dinamici, ripresi da angolazioni che non hai mai visto. 
-      Ma dietro c'è sempre un messaggio: sicurezza, rispetto, professionalità.
-    </p>
-    <p class="text-lg lg:max-w-screen-md lg:text-xl text-white/90 leading-relaxed mt-4" data-reveal-target="item">
-      Guidare un camion non è solo un lavoro. 
-      <span class="highlighted">È una responsabilità enorme</span> — e voglio che tutti lo capiscano.
-    </p>
-  </div>
-</section>
-
-<section class="border-t-2 border-brand sticky top-12 min-h-[80vh] flex flex-col justify-start items-center overflow-hidden lg:top-24">
-  <img src="<%= asset_path("group.webp") %>" alt="selfie di piertutor" class="absolute inset-0 w-full h-full object-cover object-[50%_50%]"/>
-  
-  <div class="bg-gradient-to-t from-black/50 to-black/90 absolute inset-0"></div>
-
-  <div class="max-w-[1200px] mx-auto w-full flex flex-col justify-center items-start py-12 px-8 relative z-10 text-white lg:px-0 lg:py-32 lg:items-center"
-       data-controller="reveal" data-reveal-stagger-value="100">
-    <p class="text-brand archivo text-lg mb-2 lg:text-xl" data-reveal-target="item">Le collaborazioni</p>
-    <h2 class="text-4xl mb-6 lg:text-6xl lg:mb-8 lg:text-center" data-reveal-target="item">Ambassador<br class="lg:hidden"/> <span class="text-brand">Volvo Trucks</span>.</h2>
-    <p class="text-lg mb-6 lg:text-center lg:mb-8 lg:max-w-screen-md lg:text-xl text-white/90 leading-relaxed" data-reveal-target="item">
-      Quando Volvo Trucks Italia mi ha scelto come ambassador ufficiale, 
-      ho capito che questo viaggio era diventato qualcosa di grande.
-    </p>
-    <p class="text-lg mb-8 lg:text-center lg:mb-10 lg:max-w-screen-md lg:text-xl text-white/90 leading-relaxed" data-reveal-target="item">
-      Oggi collaboro con brand internazionali, viaggio in Svezia per shooting esclusivi 
-      e partecipo a eventi in tutta Europa. E pensare che <span class="highlighted">tutto è nato da un semplice video in cabina</span>.
-    </p>
-    <a href="#contact" data-reveal-target="item"><button class="translate-x-[2px] px-6 py-3 bg-brand text-black border-1 border-black shadow-[-4px_4px_0_0_#FFF] transition-all transition-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none hover:cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none font-semibold">Lavoriamo insieme</button></a>
+    <!-- CTA -->
+    <div class="text-center mt-10 lg:mt-14" data-reveal-target="item">
+      <a href="#contact" class="btn-primary text-base px-8 py-3.5">Lavoriamo insieme</a>
+    </div>
   </div>
 </section>
 
 <%# CONTACT SECTION %>
-<section id="contact" class="relative min-h-[100vh] flex items-center overflow-hidden lg:min-h-[85vh] isolate z-0">
-  <!-- Background Image -->
-  <img src="<%= asset_path("contact.webp") %>" alt="piertutor al telefono" class="z-20 absolute inset-0 w-full h-full object-cover object-[70%_30%] lg:object-[60%_30%] transform-gpu will-change-transform"/>
-  
-  <!-- Dark overlay -->
-  <div class="z-30 absolute inset-0 bg-black/60"></div>
+<section id="contact" class="relative bg-navy py-20 lg:py-32 overflow-hidden">
+  <!-- Decorative blobs -->
+  <div class="blob w-80 h-80 bg-violet/25 -top-20 right-20"></div>
+  <div class="blob w-64 h-64 bg-brand/20 bottom-10 -left-20"></div>
+  <div class="blob w-48 h-48 bg-coral/20 top-40 left-1/3"></div>
 
-  <div class="z-40 max-w-[1200px] mx-auto w-full px-8 relative text-white lg:px-0">
-    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-16">
-      <!-- Left content - Text -->
-      <div class="mb-8 lg:mb-0 lg:max-w-lg lg:flex-shrink-0"
-           data-controller="reveal" data-reveal-stagger-value="100">
-        <p class="text-brand archivo text-lg mb-2 lg:text-xl" data-reveal-target="item">Contatti</p>
-        <h2 class="text-4xl mb-4 lg:text-6xl lg:mb-6" data-reveal-target="item">Hai <span class="text-brand">un'idea</span>?</h2>
-        <p class="text-lg lg:text-xl text-white/90 leading-relaxed" data-reveal-target="item">
-          Collaborazioni, eventi, progetti speciali: sono sempre pronto a valutare nuove avventure. 
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-0 relative z-10">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-16"
+         data-controller="reveal" data-reveal-stagger-value="100">
+      <!-- Left content -->
+      <div class="mb-10 lg:mb-0 lg:max-w-lg text-white">
+        <p class="text-brand font-semibold text-lg mb-2 tracking-wide" data-reveal-target="item">Contatti</p>
+        <h2 class="text-4xl lg:text-6xl mb-5 lg:mb-6" data-reveal-target="item">Collaboriamo<span class="text-gradient">?</span></h2>
+        <p class="text-lg lg:text-xl text-white/70 leading-relaxed" data-reveal-target="item">
+          Collaborazioni, eventi, progetti speciali: sono sempre pronto a valutare nuove avventure.
           Scrivimi e vediamo cosa possiamo creare insieme.
         </p>
       </div>
 
-      <!-- Right content - Email -->
-      <div class="w-full lg:max-w-lg lg:flex-shrink-0" data-controller="clipboard reveal" data-clipboard-text-value="pierantonio77@gmail.com">
-        <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-6 lg:p-8" data-reveal-target="item">
-          <p class="text-sm text-white/70 mb-2">Scrivimi a</p>
-          <p class="text-xl lg:text-2xl font-semibold mb-6" data-clipboard-target="source">pierantonio77@gmail.com</p>
-          <button 
+      <!-- Right content - Email card -->
+      <div class="w-full lg:max-w-lg" data-controller="clipboard reveal" data-clipboard-text-value="pierantonio77@gmail.com">
+        <div class="glass-card rounded-3xl p-8 lg:p-10" data-reveal-target="item">
+          <p class="text-sm text-white/50 mb-2 font-medium">Scrivimi a</p>
+          <p class="text-xl lg:text-2xl font-bold text-white mb-8" data-clipboard-target="source">pierantonio77@gmail.com</p>
+          <button
             data-clipboard-target="button"
             data-action="click->clipboard#copy"
-            class="translate-x-[2px] w-full px-6 py-3 bg-brand text-black font-semibold border border-black shadow-[-4px_4px_0_0_#FFF] transition-all duration-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none">
+            class="btn-primary w-full py-3.5">
             Copia email
           </button>
+
+          <div class="flex items-center justify-center gap-3 mt-6 pt-6 border-t border-white/10">
+            <a href="https://www.instagram.com/piertutor" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-white/20 hover:text-white transition-all">
+              <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@piertutor" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-white/20 hover:text-white transition-all">
+              <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/c/PierantonioDePiccoli" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-white/20 hover:text-white transition-all">
+              <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>

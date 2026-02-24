@@ -3,27 +3,27 @@
 
 <%# BANNER %>
 <section class="relative min-h-[50vh] lg:min-h-[60vh] flex items-end overflow-hidden pt-16 lg:pt-20">
-  <!-- Background Image -->
   <div class="absolute inset-0 bg-cover bg-center lg:bg-fixed" style="background-image: url(<%= asset_path('driving.webp') %>);"></div>
 
-  <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-violet/30"></div>
 
-  <!-- Content -->
-  <div class="relative max-w-[1200px] mx-auto w-full px-8 py-12 lg:py-20 lg:px-0"
+  <!-- Decorative blobs -->
+  <div class="blob w-72 h-72 bg-brand/20 -bottom-20 left-10"></div>
+  <div class="blob w-56 h-56 bg-coral/15 top-20 right-10"></div>
+
+  <div class="relative max-w-[1200px] mx-auto w-full px-6 py-14 lg:py-20 lg:px-0"
        data-controller="reveal" data-reveal-stagger-value="150">
-    <p class="text-brand archivo text-lg mb-2 lg:text-xl" data-reveal-target="item">La mia selezione</p>
+    <p class="text-brand font-semibold text-lg mb-2 tracking-wide" data-reveal-target="item">La mia selezione</p>
     <h1 class="text-4xl lg:text-6xl text-white mb-4 lg:mb-6" data-reveal-target="item">
-      Prodotti che <span class="text-brand">uso davvero</span>.
+      Prodotti che <span class="text-gradient">uso davvero</span>.
     </h1>
-    <p class="text-lg lg:text-xl text-white/80 max-w-2xl" data-reveal-target="item">
-      Niente sponsorizzazioni forzate. Qui trovi solo quello che ho testato personalmente, 
-      in cabina e fuori. Se lo consiglio, è perché ci credo.
+    <p class="text-lg lg:text-xl text-white/70 max-w-2xl leading-relaxed" data-reveal-target="item">
+      Niente sponsorizzazioni forzate. Qui trovi solo quello che ho testato personalmente,
+      in cabina e fuori. Se lo consiglio, &egrave; perch&eacute; ci credo.
     </p>
     <% if current_user %>
       <div class="mt-6" data-reveal-target="item">
-        <%= link_to "Aggiungi Prodotto", new_affiliate_product_path, 
-            class: "translate-x-[2px] inline-block px-6 py-3 bg-white text-black font-semibold border border-black shadow-[-4px_4px_0_0_#FFFF04] transition-all duration-150 hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none" %>
+        <%= link_to "Aggiungi Prodotto", new_affiliate_product_path, class: "btn-primary" %>
       </div>
     <% end %>
   </div>

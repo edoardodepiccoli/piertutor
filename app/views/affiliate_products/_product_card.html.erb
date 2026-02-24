@@ -1,36 +1,26 @@
-<div class="relative bg-white flex flex-col h-full <%= highlighted ? 'border-2 border-black shadow-[0_0_30px_rgba(255,255,4,0.3)]' : 'border border-gray-200' %> overflow-hidden group transition-all duration-300 hover:shadow-xl">
+<div class="product-card relative bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col h-full group">
   <% if highlighted %>
-    <!-- Highlighted Badge with Marquee -->
-    <div class="absolute top-0 left-0 right-0 bg-black py-2 text-sm font-bold tracking-wider z-10 overflow-hidden">
-      <div class="marquee-container">
-        <span class="marquee-text" style="color: #FFFF04;">
-          CONSIGLIATO DA PIER — CONSIGLIATO DA PIER — CONSIGLIATO DA PIER — CONSIGLIATO DA PIER —&nbsp;
-        </span>
-        <span class="marquee-text" style="color: #FFFF04;">
-          CONSIGLIATO DA PIER — CONSIGLIATO DA PIER — CONSIGLIATO DA PIER — CONSIGLIATO DA PIER —&nbsp;
-        </span>
-      </div>
+    <div class="absolute top-4 left-4 z-10">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-navy rounded-full bg-gradient-to-r from-brand to-coral shadow-md">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Consigliato
+      </span>
     </div>
   <% end %>
 
-  <!-- Image -->
-  <div class="w-full flex items-center justify-center p-4 <%= highlighted ? 'pt-12' : '' %> bg-white">
-    <img src="<%= affiliate_product.image_url %>" 
+  <div class="w-full flex items-center justify-center p-6 bg-gray-50/50 rounded-t-2xl">
+    <img src="<%= affiliate_product.image_url %>"
          alt="<%= affiliate_product.title %>"
-         class="w-full h-64 object-contain transition-transform duration-300 group-hover:scale-105"/>
+         class="product-image w-full h-56 object-contain"/>
   </div>
 
-  <!-- Content -->
-  <div class="flex flex-col flex-grow p-6 <%= highlighted ? 'bg-gray-50' : '' %>">
-    <h2 class="text-lg font-semibold mb-4 text-gray-900"><%= affiliate_product.title %></h2>
-    
+  <div class="flex flex-col flex-grow p-6">
+    <h2 class="text-base font-semibold text-navy mb-4 leading-snug"><%= affiliate_product.title %></h2>
+
     <div class="mt-auto flex flex-col gap-3">
-      <a href="<%= affiliate_product.affiliate_url %>" target="_blank" rel="nofollow" 
-         class="translate-x-[2px] w-full px-4 py-3 text-black font-semibold text-center border border-black shadow-[-4px_4px_0_0_#000] transition-all duration-150 
-                hover:translate-x-[-4px] hover:translate-y-[4px] hover:shadow-none cursor-pointer 
-                active:translate-x-[-4px] active:translate-y-[4px] active:shadow-none"
-         style="background-color: #FFFF04;">
-        Vai al prodotto
+      <a href="<%= affiliate_product.affiliate_url %>" target="_blank" rel="nofollow"
+         class="btn-primary w-full text-center text-sm py-3">
+        Scopri su Amazon
       </a>
 
       <% if current_user %>
@@ -38,7 +28,7 @@
           <%= link_to toggle_highlight_affiliate_product_path(affiliate_product),
             data: { turbo_method: :patch },
             title: affiliate_product.highlighted? ? "Rimuovi evidenza" : "Metti in evidenza",
-            class: "inline-flex items-center justify-center w-8 h-8 rounded-full text-gray-400 hover:text-yellow-500 hover:bg-gray-100 transition-colors" do %>
+            class: "inline-flex items-center justify-center w-8 h-8 rounded-full text-warm hover:text-brand hover:bg-brand/10 transition-colors" do %>
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="<%= affiliate_product.highlighted? ? 'currentColor' : 'none' %>" stroke="currentColor" stroke-width="2">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
             </svg>
@@ -47,7 +37,7 @@
           <%= link_to affiliate_product_path(affiliate_product),
             data: { turbo_method: :delete, controller: "confirm-delete", action: "click->confirm-delete#confirm" },
             title: "Elimina",
-            class: "inline-flex items-center justify-center w-8 h-8 rounded-full text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors" do %>
+            class: "inline-flex items-center justify-center w-8 h-8 rounded-full text-warm hover:text-coral hover:bg-coral/10 transition-colors" do %>
             <svg class="w-4 h-4" data-confirm-delete-target="trashIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/>
             </svg>

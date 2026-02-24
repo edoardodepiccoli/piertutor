@@ -1,13 +1,16 @@
 <div id="highlighted_products_section">
   <% if @highlighted_products.any? %>
-    <section class="bg-black py-16 px-8 border-t-4 border-brand">
-      <div class="max-w-[1200px] mx-auto" <%= 'data-controller="reveal" data-reveal-stagger-value="50"'.html_safe if local_assigns.fetch(:reveal, false) %>>
-        <div class="text-center mb-12" <%= 'data-reveal-target="item"'.html_safe if local_assigns.fetch(:reveal, false) %>>
-          <p class="text-brand archivo text-lg mb-2">I miei preferiti</p>
-          <h2 class="text-3xl lg:text-5xl text-white mb-4">Top <span class="text-brand">Picks</span></h2>
-          <p class="text-white/70 max-w-xl mx-auto">I prodotti che uso di più e che consiglio a tutti. Qualità garantita.</p>
+    <section class="bg-navy py-16 lg:py-24 px-6 relative overflow-hidden">
+      <div class="blob w-64 h-64 bg-violet/20 -top-10 right-20"></div>
+      <div class="blob w-48 h-48 bg-brand/15 bottom-10 -left-10"></div>
+
+      <div class="max-w-[1200px] mx-auto relative z-10" <%= 'data-controller="reveal" data-reveal-stagger-value="50"'.html_safe if local_assigns.fetch(:reveal, false) %>>
+        <div class="text-center mb-12 lg:mb-16" <%= 'data-reveal-target="item"'.html_safe if local_assigns.fetch(:reveal, false) %>>
+          <p class="text-brand font-semibold text-lg mb-2 tracking-wide">I miei preferiti</p>
+          <h2 class="text-3xl lg:text-5xl text-white mb-4">Top <span class="text-gradient">Picks</span></h2>
+          <p class="text-white/50 max-w-xl mx-auto">I prodotti che uso di pi&ugrave; e che consiglio a tutti. Qualit&agrave; garantita.</p>
         </div>
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <% @highlighted_products.each_with_index do |affiliate_product, index| %>
             <div <%= 'data-reveal-target="item"'.html_safe if local_assigns.fetch(:reveal, false) %>>
               <%= render partial: 'product_card', locals: { affiliate_product: affiliate_product, highlighted: true, index: index } %>

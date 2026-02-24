@@ -1,8 +1,7 @@
-// app/javascript/controllers/menu_controller.js
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["panel", "backdrop", "openIcon", "closeIcon"]
+  static targets = ["panel", "backdrop", "openIcon", "closeIcon", "item"]
 
   connect() {
     this.close()
@@ -34,10 +33,13 @@ export default class extends Controller {
     this.backdropTarget.classList.remove("opacity-0", "pointer-events-none")
     this.backdropTarget.classList.add("opacity-100")
 
-    this.panelTarget.classList.remove("translate-x-full")
-    this.panelTarget.classList.add("translate-x-0")
+    this.panelTarget.style.maxHeight = this.panelTarget.scrollHeight + "px"
+    this.panelTarget.style.opacity = "1"
 
-    document.documentElement.classList.add("overflow-hidden")
+    this.itemTargets.forEach((item, i) => {
+      item.style.transitionDelay = `${80 + i * 60}ms`
+      requestAnimationFrame(() => item.classList.add("menu-item-visible"))
+    })
   }
 
   close() {
@@ -52,11 +54,14 @@ export default class extends Controller {
     }
 
     if (this.hasPanelTarget) {
-      this.panelTarget.classList.add("translate-x-full")
-      this.panelTarget.classList.remove("translate-x-0")
+      this.panelTarget.style.maxHeight = "0"
+      this.panelTarget.style.opacity = "0"
     }
 
-    document.documentElement.classList.remove("overflow-hidden")
+    this.itemTargets.forEach(item => {
+      item.classList.remove("menu-item-visible")
+      item.style.transitionDelay = "0ms"
+    })
   }
 
   beforeCache() {
